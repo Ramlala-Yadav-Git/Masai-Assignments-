@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Stories</title>
+    <style>
+        .nav{
+         background-color:rgb(182,28,29) ;
+        box-shadow: 2px 2px 2px 2px rgba(252, 141, 141, 0.438);
+
+        }
+        .nav ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row-reverse;
+           
+        }
+        .nav ul li{
+            margin: 2px;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            color: rgb(227,219,218);
+        }
+         .nav ul li:hover{
+             background-color: rgba(248, 14, 14, 0.281);
+             border-radius: 5px;
+         }
+        .top{
+            font-weight: bold;
+            font-size: 30px;
+            background-color:rgb(14, 2, 2) ;
+            border: 1px solid rgba(248, 14, 14, 0.281);
+            padding: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+            color: rgb(26, 12, 2);
+            text-align: center;
+            color: white;
+        }
+        #content{
+            width: 90%;
+            margin: auto;
+            box-shadow: 2px 2px 2px 2px rgba(182, 173, 173, 0.164);
+            padding: 2%;
+            
+        }
+        #content > div{
+        display: flex;
+         margin: 2%;
+        }
+        #content div img{
+            width: 150px;
+            height:150px;
+            padding-right: 10px;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #content > div {
+            box-shadow: 2px 2px 2px 2px rgba(247, 146, 135, 0.219);
+            padding: 2%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+      
+        <ul>
+            <li onclick="sports()">Sports</li>
+            <li onclick="entertainment()">Entertainment</li>
+            <li onclick="technology()">Technology</li>
+        </ul>
+    </div>
+    <div>
+ <h3 class="top" id="top">Top Stories</h3>
+    </div>
+   
+
+<div id="content">
+
+</div>
+
+</body>
+
+
+
+<script >
+
+var data;
+
+async function show(){
+    try{
+        let res =await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=201ea029bcfc43e78ac34cd5b7455693`)
+        data = await res.json();
+
+      return data
+      
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+show()
+async function l(){
+    data = await show()
+    showData(data);
+}
+l()
+
+function sports(){
+  async function show(){
+    try{
+        let res =await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=201ea029bcfc43e78ac34cd5b7455693`)
+    data = await res.json();
+
+      
+      showData(data);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+let top = document.getElementById("top")
+top.innerText ="Top Sports Headlines"
+show()
+}
+function technology(){
+  async function show(){
+    try{
+        let res =await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=201ea029bcfc43e78ac34cd5b7455693`)
+    data = await res.json();
+
+      
+      showData(data);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+let top = document.getElementById("top")
+top.innerText ="Top Technology Headlines"
+show()
+}
+function entertainment(){
+  async function show(){
+    try{
+        let res =await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=201ea029bcfc43e78ac34cd5b7455693`)
+    data = await res.json();
+
+      
+      showData(data);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+let top = document.getElementById("top")
+top.innerText ="Top Entertainment Headlines"
+show()
+}
+
+function showData(data){
+   console.log(data);
+
+let content = document.getElementById("content")
+
+content.innerText = null;
+
+for(let i=10; i<20; i++){
+console.log(data.articles[i]);
+let div = document.createElement("div")
+
+let title = document.createElement('p')
+title.innerText = `${data.articles[i].title}`
+title.setAttribute("class","title")
+
+
+let img = document.createElement("img")
+img.src = `${data.articles[i].urlToImage}`
+
+let description = document.createElement("p")
+description.innerText =`${data.articles[i].description}`
+
+let div1 = document.createElement("div")
+
+div1.append(title,description)
+
+div.append(img,div1)
+content.append(div)
+
+}
+
+}
+
+
+</script>
+</html>
