@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Movie</title>
+    <style>
+        body{
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20191113/pngtree-blue-movie-film-texture-background-image_321897.jpg);
+            background-repeat:no-repeat ;
+            background-size: cover;
+        }
+       .cont{
+    
+           width: 600px;
+           margin: auto;
+           background-color: rgba(247, 244, 240, 0.555);
+           padding: 30px;
+           border-radius: 10px;
+           text-align: center;
+       }
+      
+        #container div{
+            width: 60%;
+            margin: auto;
+           margin-top: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 25px;
+        }
+        #container div img{
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <h1>Search here for movie details</h1>
+
+    Movie : <input type="text" id="movie" placeholder="Input movie name here..">
+
+    <button onclick="show()">Search</button>
+
+
+    <div id="container">
+
+    </div>
+    </div>
+</body>
+
+<script>
+    
+
+
+async function show() {
+    let name = document.getElementById("movie").value;
+    try {
+        let res = await fetch(`http://www.omdbapi.com/?t=${name}&apikey=a76e26b7`)
+        var data = await res.json()
+if(data.Response === "False"){
+    err()
+}
+else{
+    console.log(data.imdbRating);
+ showData(data)
+       // console.log(data);
+        
+}
+       
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+function showData(d) {
+    let container = document.getElementById("container")
+    container.innerText = "";
+    let div = document.createElement("div")
+
+
+    let img = document.createElement("img")
+    img.src = d.Poster;
+
+    let title = document.createElement("p");
+    title.innerText = d.Title;
+
+    let Year = document.createElement("p");
+    Year.innerText = `Year :${d.Year}`;
+
+    let Actors = document.createElement("p");
+    Actors.innerText = `Actors :${d.Actors}`;
+
+let rec = document.createElement("p")
+rec.innerText= "Recomended!"
+rec.style.color = "Red"
+
+if(Number(d.imdbRating)>8.5){
+  div.append(rec,img, title, Year, Actors)
+    container.append(div)  
+}
+else{
+   div.append(img, title, Year, Actors)
+    container.append(div) 
+}
+
+
+    
+}
+function err(){
+     let container = document.getElementById("container")
+    container.innerText = "";
+    let div = document.createElement("div")
+
+
+    let img = document.createElement("img")
+    img.src = "https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif";
+
+     let message = document.createElement("p");
+    message.innerText = `Movie Not Found !!`;
+    
+
+     div.append(img,message)
+    container.append(div)
+}
+</script>
+</html>

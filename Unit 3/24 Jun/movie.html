@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Movie</title>
+    <style>
+       .cont{
+           width:98vw;
+           background-color: rgb(238, 230, 230);
+           box-shadow: 2px 2px 2px rgb(119, 110, 110);
+           padding: 5px;
+           margin: auto;
+           height: 94vh;
+           
+       }
+      
+        #container div{
+            width: 60%;
+            margin: auto;
+            margin: 20px;
+            font-weight: bold;
+        }
+        #container div img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <h1>Search here for movie details</h1>
+
+    Movie : <input type="text" id="movie" placeholder="Input movie name here..">
+
+    <button onclick="show()">Search</button>
+
+
+    <div id="container">
+
+    </div>
+    </div>
+</body>
+
+<script>
+    
+
+
+async function show() {
+    let name = document.getElementById("movie").value;
+    try {
+        let res = await fetch(`http://www.omdbapi.com/?t=${name}&apikey=a76e26b7`)
+        let data = await res.json()
+
+        showData(data)
+        console.log(data);
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+function showData(d) {
+    let container = document.getElementById("container")
+    container.innerText = "";
+    let div = document.createElement("div")
+
+
+    let img = document.createElement("img")
+    img.src = d.Poster;
+
+    let title = document.createElement("p");
+    title.innerText = d.Title;
+
+    let Year = document.createElement("p");
+    Year.innerText = `Year :${d.Year}`;
+
+    let Actors = document.createElement("p");
+    Actors.innerText = `Actors :${d.Actors}`;
+
+
+
+
+    div.append(img, title, Year, Actors)
+    container.append(div)
+}
+</script>
+</html>
