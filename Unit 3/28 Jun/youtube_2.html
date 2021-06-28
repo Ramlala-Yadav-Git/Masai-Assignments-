@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube App</title>
+    <style>
+      #div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        margin: 20px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(202, 195, 195);
+      }
+      .nav .left,
+      .nav .right {
+        display: flex;
+      }
+      .line {
+        margin: 5%;
+        margin-top: 30px;
+      }
+      .line div {
+        border-bottom: 2px solid black;
+        width: 20px;
+        height: 3px;
+      }
+      .left img {
+        width: 100px;
+        margin-top: 10px;
+      }
+      .middle {
+        margin-top: 20px;
+        padding: 2px;
+      }
+      .middle input {
+        width: 500px;
+        height: 20px;
+
+        font-size: 20px;
+      }
+      .middle button {
+        width: 50px;
+        height: 25px;
+        padding: 4px;
+      }
+      .middle img {
+        width: 25px;
+        margin-bottom: -2.5px;
+      }
+      .icons {
+        width: 30px;
+        margin-right: 30px;
+      }
+      .profile img {
+        width: 50px;
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="left">
+        <div class="line">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <img
+            src="https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-png-transparent-image-5.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="middle">
+        <input type="text" name="input" id="input" placeholder="Search" />
+        <button onclick="searchVideos()">O</button>
+
+        <img
+          src="https://pics.freeicons.io/uploads/icons/png/13586174781580594410-512.png"
+          alt=""
+        />
+      </div>
+      <div class="right">
+        <div class="icons">
+          <svg
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+            class="style-scope yt-icon"
+            style="
+              pointer-events: none;
+              display: block;
+              width: 100%;
+              height: 100%;
+            "
+          >
+            <g class="style-scope yt-icon">
+              <path
+                d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"
+                class="style-scope yt-icon"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="icons">
+          <yt-icon class="style-scope ytd-topbar-menu-button-renderer"
+            ><svg
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+              class="style-scope yt-icon"
+              style="
+                pointer-events: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <g class="style-scope yt-icon">
+                <path
+                  d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"
+                  class="style-scope yt-icon"
+                ></path>
+              </g>
+            </svg>
+            <!--css-build:shady--></yt-icon
+          >
+        </div>
+        <div class="icons">
+          <yt-icon class="style-scope ytd-notification-topbar-button-renderer"
+            ><svg
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+              class="style-scope yt-icon"
+              style="
+                pointer-events: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <g class="style-scope yt-icon">
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                  class="style-scope yt-icon"
+                ></path>
+              </g>
+            </svg>
+            <!--css-build:shady--></yt-icon
+          >
+        </div>
+        <div class="profile">
+          <img
+            src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="div"></div>
+  </body>
+  <script src="youtube_2.js"></script>
+</html>
