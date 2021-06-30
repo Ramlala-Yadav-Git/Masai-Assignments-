@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import - Export</title>
+    <style>
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 4%;
+            padding-right: 4%;
+            border: 1px solid black;
+            background-color: black;
+            text-transform: uppercase;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .options h3 {
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+
+        #container {
+            border: 1px solid gray;
+            margin-top: 10px;
+
+
+        }
+
+        #container div {
+            width: 100%;
+            text-align: center;
+            padding: 1%;
+
+        }
+
+        #container div img {
+            width: 70%;
+            height: 400px;
+
+        }
+
+        .welcome {
+            background-color: gray;
+            text-align: center;
+            padding: 1px;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div class="welcome">
+        <p>Welcome to my khana khajana</p>
+    </div>
+    <div id="container"></div>
+
+</body>
+
+<script type="module" src="main.js"></script>
+<script type="module">
+    import navbar from "./components/navbar.js"
+    let nav = document.getElementById("nav")
+    nav.innerHTML = navbar()
+</script>
+
+</html>
