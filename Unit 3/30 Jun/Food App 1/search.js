@@ -11,7 +11,7 @@ async function show() {
 let parent = document.getElementById("container")
 
 function append(d) {
-    
+    parent.innerHtml =null;
     d.forEach(el => {
         let div = document.createElement("div")
 
