@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div id="container"></div>
+    <div id="show_items"></div>
+    <div class="content" id="content">
+        <div id="parent_day1"></div>
+    </div>
+
+
+
+</body>
+<script src="./components/index.js"></script>
+<script type="module">
+    import { container, show } from "./components/container.js"
+    let c = document.getElementById("container")
+    c.innerHTML = container();
+
+
+    let show_items = document.getElementById("show_items")
+    show_items.innerHTML = show();
+</script>
+
+</html>
