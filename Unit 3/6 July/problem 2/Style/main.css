@@ -1,0 +1,51 @@
+
+body{
+    background-color: honeydew;
+    padding: 10px;
+}
+.mainDiv >div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+    margin: auto;
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 20px;
+    grid-gap: 10px;
+    color: white;
+    text-align: center;
+    
+}
+.mainDiv .element{
+    background-color: hotpink;
+    text-align: center;
+    border-radius: 29px;
+    padding: 2px;
+    width: 70%;
+    cursor: pointer;
+   padding-left: 20px;
+}
+.mainDiv >div :nth-child(1){
+    background-color: gray;
+}
+.mainDiv >div :nth-child(2){
+    background-color: lightseagreen;
+}
+.mainDiv >div :nth-child(3){
+    background-color: lightgreen;
+}
+.mainDiv >div :nth-child(4){
+    background-color: lightblue;
+}
+.mainDiv >div :nth-child(5){
+    background-color: gray;
+}
+.mainDiv >div :nth-child(6){
+    background-color: teal;
+}
+.mainDiv >div :nth-child(7){
+    background-color: yellow;
+}
+.mainDiv >div :nth-child(8){
+    background-color: blueviolet;
+}
