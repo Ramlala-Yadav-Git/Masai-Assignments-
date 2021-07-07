@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(243, 240, 240);
+    /* text-align: center; */
+}
+div{
+    background-color: rgb(247, 172, 11);
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+.Css{
+    background-color: black;
+    color: white;
+    width: 60%;
+    text-align: center;
+}
+
+
