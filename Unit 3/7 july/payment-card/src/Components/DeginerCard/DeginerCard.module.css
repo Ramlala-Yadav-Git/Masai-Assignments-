@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(40,34,63);
+    font-family: sans-serif;
+}
+.MainDiv{
+    background-color: rgb(35,30,57);
+    color: white;
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2p 2px 2px 2px rgb(48, 46, 46);
+}
+.MainDiv .pro{
+    background-color: rgb(230, 230, 11);
+    width: 50px;
+    color: black;
+    text-align: center;
+    border-radius: 2px;
+}
+.MainDiv .imgDiv{
+    text-align: center;
+}
+.MainDiv .imgDiv img{
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid rgb(2,190,203);
+    padding: 4px;
+}
+.MainDiv .information{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.MainDiv .buttons{
+    text-align: center;
+}
+.MainDiv .buttons > :nth-child(1){
+    background-color: rgb(2,190,203);
+    border: none;
+}
+.MainDiv .buttons > :nth-child(2){
+    background-color: rgb(40,34,63);
+        border: 1px solid rgb(2,190,203);
+        color: rgb(2,190,203);
+}
+.MainDiv .buttons button{
+    width: 140px;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.MainDiv .buttons button:hover{
+    box-shadow: 2px 2px 2px rgba(2, 190, 203, 0.336);
+    transition:ease 0.3s;
+}
+.skills{
+    background-color: rgb(30,27,54);
+    padding: 1px;
+    margin-top: 20px;
+}
+.skills ul{
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+}
+.skills ul li{
+    margin: 5px;
+    border: 0.01px solid rgba(143, 140, 140, 0.247);
+    padding: 10px;
+    font-size: 12px;
+    color: rgb(184, 183, 183);
+}
+.skills p{
+    margin-left: 45px;
+    margin-bottom: -15px;
+    font-size: 16px;
+    color: rgb(184, 183, 183);
+}
