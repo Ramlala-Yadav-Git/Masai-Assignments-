@@ -1,0 +1,99 @@
+body{
+    background-color: thistle;
+}
+.Navbar{
+    background-color: teal;
+    display: flex;
+    justify-content: space-between;
+  
+}
+.Navbar .Left{
+    display: flex;
+   
+}
+.Navbar .Left img{
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 3px;
+    margin-right: 10px;
+    
+}
+.Navbar .Right{
+    width: 30%;
+    margin-right: 20px;
+    font-weight: bold;
+    color: white;
+}
+.Navbar .Right ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+}
+.UpperDiv{
+    background-color: tomato;
+    width: 100%;
+    height: 300px;
+    z-index: 1;
+    position: absolute;
+}
+.Section{
+    background-color: tan;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    /* padding: 10px; */
+    margin-bottom: 5px;
+    z-index: 2;
+    position: relative;
+    top: 150px;
+    border-radius: 10px;
+    background-color: white;
+   
+}
+.Section h1,.Section p {
+    position: relative;
+    top: -80px;
+}
+
+.Section img{
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 3px;
+    position:relative;
+    top: -80px;
+}
+.Lover{
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 70%;
+    padding: 5px;
+    position: relative;
+    top: 150px;
+    border-radius: 10px;
+    
+}
+.Lover .Title{
+    display: flex;
+}
+.Lover .Title img{
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin-top: 30px;
+    margin-right: 10px;
+
+}
+.Lover .Parent{
+margin: 20px;
+}
+.Lover .Add{
+    background-color: rgb(228, 216, 216);
+    /* margin: 50px; */
+    padding: 5px;
+    border-radius: 2px;
+}
