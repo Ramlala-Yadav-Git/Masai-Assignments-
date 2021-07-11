@@ -1,0 +1,97 @@
+body{
+    background-color: rgba(138, 191, 252, 0.329);
+}
+.todo{
+    width: 50%;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(1, 8, 71);
+    min-height: 300px;
+}
+.todo .input {
+    background-color: rgb(1, 8, 71);
+}
+.todo .input input{
+    font-size: 20px;
+     color: rgb(1, 8, 71);
+    margin: 2px;
+   padding: 1px;
+   outline: none;
+   border-radius: 5px;
+   border: 1px solid rgb(1, 8, 71);
+    box-shadow: 2px 2px 2px rgba(190, 184, 184, 0.521);
+}
+.todo .input button{
+    font-size: 20px;
+    margin: 2px;
+   border: 1px solid rgb(1, 8, 71);
+   cursor: pointer;
+   background-color: rgb(4, 133, 36);
+   color: rgb(1, 8, 71);
+   font-weight: bold;
+   border-radius: 5px;
+   box-shadow: 2px 2px 2px rgba(190, 184, 184, 0.521);
+
+}
+.inputList{
+    background-color: white;
+    border: 1px solid gray;
+    
+}
+.inputList >div{
+    display: flex;
+  border: 1px solid gray;
+  padding: 4px;
+  margin: 10px;
+
+}
+.inputList>div li{
+ width: 80%;
+ text-align: left;
+ list-style-type: square;
+ color: gray;
+
+ 
+}
+.inputList> div button{
+    width: 10%;
+    text-align: center;
+     margin: 2px;
+   border: 1px solid rgb(1, 8, 71);
+   cursor: pointer;
+   background-color: rgb(4, 133, 36);
+   color: rgb(1, 8, 71);
+   font-weight: bold;
+   border-radius: 5px;
+   box-shadow: 2px 2px 2px rgba(190, 184, 184, 0.521);
+/* color: white; */
+}
+
+.comp{
+display: none;
+background-color: rgb(0, 92, 5);
+color: white;
+
+}
+
+.completed li{
+  text-decoration: line-through;
+  color: rgb(0, 233, 0);
+  list-style: square;
+  text-align: left;
+  
+}
+.completed{
+ background-color: rgb(247, 247, 247);
+ padding-bottom: 10px;
+
+}
+.completed div{
+border: 1px solid rgba(78, 248, 101, 0.39);
+ text-align: left;
+padding: 4px;
+margin: 10px;
+}
