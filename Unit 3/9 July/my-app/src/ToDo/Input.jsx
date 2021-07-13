@@ -16,7 +16,8 @@ export function ToDoInput() {
 
         const payLoad = {
             id: uuid(),
-            title: input
+            title: input,
+
         }
         setInputList([...inputList, payLoad])
 
