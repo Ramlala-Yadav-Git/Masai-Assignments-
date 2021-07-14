@@ -1,0 +1,57 @@
+
+.mainDiv{
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: rgb(0, 3, 15);
+    color: white;
+    min-height: 700px;
+    
+}
+.mainDiv >h1{
+    text-align: center;
+}
+.form{
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 50%;
+    color: rgb(0, 3, 15);
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(209, 205, 205);
+}
+.form form > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
+}
+.buttons{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+.buttons button{
+    margin: 10px;
+    background-color: blue;
+   border: none;
+   padding: 10px;
+   font-weight: bold;
+   color: white;
+   border-radius: 10px;
+
+}
+.blog{
+   color: rgb(0, 3, 15);
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(250, 248, 248);
+  border-radius: 10px;
+}
+.blog >h1{
+    text-align: center;
+    color: rgb(1, 1, 116);
+    text-transform: capitalize;
+}
