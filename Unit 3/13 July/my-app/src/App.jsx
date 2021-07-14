@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
 
-      {/* <Todos /> */}
+      <Todos />
       {/* <Clock /> */}
 
-      <TimerMain initial={2} final={7} />
+      {/* <TimerMain initial={2} final={7} /> */}
 
 
     </div>

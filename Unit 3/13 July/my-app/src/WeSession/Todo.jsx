@@ -5,7 +5,8 @@ export function Todos() {
 
     const [text, settext] = useState("")
     const [todosList, settodosList] = useState([])
-
+    const [loading, setLoading] = useState(false)
+    const [page, setPage] = useState(1)
     useEffect(() => {
         setTimeout(() => {
             getTodos()
@@ -14,6 +15,7 @@ export function Todos() {
     }, [todosList]);
 
     const getTodos = () => {
+        setLoading(true)
         try {
             axios.get("http://localhost:3004/todos").then(({ data }) => {
                 settodosList(data)
@@ -43,6 +45,13 @@ export function Todos() {
 
 
     }
+    const handleToggle = (b, c) => {
+
+        axios.patch("http://localhost:3004/todos/" + b, { status: !c })
+
+
+        getTodos();
+    }
 
 
 
@@ -62,10 +71,11 @@ export function Todos() {
                     todosList.map((e) => {
                         return <div key={e.id}>
                             <p>{e.title}</p>
-                            <p>{e.status}</p>
+                            <p>{`${e.status}`}</p>
                             <button onClick={
                                 () => handleRemove(e.id)
                             }>Remove</button>
+                            <button onClick={() => handleToggle(e.id, e.status)}>Toggle</button>
                         </div>
                     })
                 }
