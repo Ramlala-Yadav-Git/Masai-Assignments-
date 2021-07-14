@@ -65,6 +65,7 @@ export function BlogPost() {
                     </div>
                     <div>
                         Category : <select onChange={(e) => handleChange(e)} name="category" value={formData.category} >
+                            <option value="Select">Select</option>
                             <option value="technology">Technology</option>
                             <option value="nature">Nature</option>
                         </select>

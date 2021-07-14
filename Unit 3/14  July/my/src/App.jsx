@@ -1,10 +1,12 @@
 // import { Input } from "./Input/Input"
-import { BlogPost } from "./BlogPost/blogPost"
+// import { BlogPost } from "./BlogPost/blogPost"
+import { UserInput } from "./UserDetailsForm/UserInput"
 function App() {
   return (
     <div className="App">
       {/* <Input /> */}
-      <BlogPost />
+      {/* <BlogPost /> */}
+      <UserInput />
     </div>
   );
 }

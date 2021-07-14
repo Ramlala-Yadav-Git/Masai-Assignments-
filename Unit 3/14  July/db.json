@@ -1,0 +1,31 @@
+{
+  "formdata": [
+    {
+      "name": "Ramlala Yadav",
+      "age": "24",
+      "address": "Sidhi ",
+      "department": "Mechanical",
+      "salary": "78000",
+      "isMarried": true,
+      "id": 1
+    },
+    {
+      "name": "Ram Singh",
+      "age": "23",
+      "address": "sidhi",
+      "salary": "10000",
+      "department": "Information Technology",
+      "isMarried": true,
+      "id": 3
+    },
+    {
+      "name": "Singh",
+      "age": "23",
+      "address": "rew",
+      "salary": "10000",
+      "department": "Electronics",
+      "isMarried": false,
+      "id": 5
+    }
+  ]
+}

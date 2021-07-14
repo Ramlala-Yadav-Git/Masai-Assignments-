@@ -26,6 +26,26 @@
     grid-template-columns: 1fr 1fr;
     margin: 10px;
 }
+.form form > div input,
+.form form > div textarea,
+.form form > div select
+ {
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.473);
+    font-size: 15px;
+}
+.form input[type="submit"]{
+  margin: 4px;
+    background-color: blue;
+   border: none;
+   padding: 10px;
+   font-weight: bold;
+   color: white;
+   border-radius: 10px;
+
+}
 .buttons{
     text-align: center;
     width: 50%;

@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(20, 14, 14);
+}
+.table{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+
+}
+.table > div{
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+.form{
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.form  div{
+    margin: 10px;
+   text-align: left;
+}
+.form  div >input,
+.form  div >select{
+    outline: none;
+    border: 1px solid gray;
+    padding: 7px;
+    border-radius: 8px; 
+  width: 80%;
+
+}
+.form  div > input[type ="checkbox"]{
+    width: 30px;
+
+}
+.status{
+    border: 1px solid gray;
+    width: 75%;
+    padding: 7px;
+    border-radius: 8px;
+    text-align: left;
+}
+.data{
+    width: 40%;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 10px;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
