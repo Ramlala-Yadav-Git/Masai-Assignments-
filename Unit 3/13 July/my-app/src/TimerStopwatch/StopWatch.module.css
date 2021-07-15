@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+}
+.main{
+    text-align: center;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 70%;
+    margin: auto;
+    background-color: teal;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+.main .header{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 300px;
+    margin: auto;
+    color: white;
+
+}
+.main .header > div{
+    background-color: rgb(2, 15, 73);
+    font-size: 11px;
+    border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+button{
+    color:rgb(2, 15, 73) ;
+    padding: 8px;
+    margin: 10px;
+    width: 200px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.show p{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    width: 200px;
+    margin: auto;
+    background-color:rgb(2, 15, 73) ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}

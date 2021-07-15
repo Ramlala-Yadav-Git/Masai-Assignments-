@@ -1,0 +1,47 @@
+https :-
+
+client sever communication when ever any user/client 
+make an request the server give him response this process three phase
+
+client => server => client => server
+
+Three way handshake between client and server
+
+Put and Post ==:>>>
+
+Idem potency :>
+ baar baar request karne par result smae aana
+<::::>  
+Put is idem potent methos but Post is not .
+
+PUT :>
+If resource exists then update it else create
+
+
+
+ Put updates the data while post posts the data
+
+ POST :>> it will create all the time you request to the server.
+
+
+
+
+Network  section in browser  :>>>>>
+
+
+axios.put(""+ id ,{
+    title:"fjdlsk",
+    name:"fnksjn"
+})
+
+patch and put on above code
+
+
+aixos github account  <<<:
+
+
+
+
+
+
+
