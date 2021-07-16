@@ -1,18 +1,18 @@
-import { Form } from "./We/we"
-import { NavBar } from "./NavBar/NavBar"
-
+// import { Form } from "./We/we"
+// import { NavBar } from "./NavBar/NavBar"
+import { ToolBar } from "./CustomNavBar/ToolBar";
 function App() {
   return (
     <div >
       <>
 
-        <NavBar>
+        {/* <NavBar>
           <p>Home</p>
           <p>Login</p>
           <p>Sign In</p>
-        </NavBar>
+        </NavBar> */}
       </>
-
+      <ToolBar />
     </div>
   );
 }
