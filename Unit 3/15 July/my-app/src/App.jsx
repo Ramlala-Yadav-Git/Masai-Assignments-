@@ -1,9 +1,9 @@
-import { Axios } from "./Axios/Axios"
-import { Todo } from "./Axios/todo"
+
+
+import { Todo } from "./TodoPost/ToDo"
 function App() {
   return (
     <div className="App">
-      <Axios />
       <Todo />
     </div>
   );

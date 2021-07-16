@@ -1,0 +1,66 @@
+
+
+
+July sixteen :::>>>>
+
+As may as possible stick to javascript
+
+Composition 
+
+
+function Form({children,toRender}){
+    return(
+        <Form 
+        style ={
+            {
+                border : "1px solid gray"
+            }
+        }>
+        {children}
+        <input type ="number />
+        <input type ="number />
+
+    )
+}
+
+function App(){
+    return (
+        <div>
+        <Form>
+        <input type ="checkbox"/>
+        </Form>
+        
+        </div>
+    )
+}
+
+
+Style Component :::>>>>
+npm install styled-components  
+
+
+import styled from "styled-components"
+
+const name sould be in pascal case
+
+
+const Wrapper = styled.div  (backtick)"
+
+color:res;
+font-size :10px
+
+for childern :>> use & for parent like &:hover{}
+input(childern name) {
+
+}
+input:hover{
+
+}
+";
+
+in app write your html under this Wrapper so that they will contain the properties of Wrapper
+
+
+
+
+
