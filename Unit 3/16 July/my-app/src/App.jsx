@@ -1,6 +1,7 @@
 // import { Form } from "./We/we"
 // import { NavBar } from "./NavBar/NavBar"
-import { ToolBar } from "./CustomNavBar/ToolBar";
+// import { ToolBar } from "./CustomNavBar/ToolBar";
+import { Drawer } from "./SideBar/Drawer"
 function App() {
   return (
     <div >
@@ -11,8 +12,10 @@ function App() {
           <p>Login</p>
           <p>Sign In</p>
         </NavBar> */}
+
+        {/* <ToolBar /> */}
       </>
-      <ToolBar />
+      <Drawer />
     </div>
   );
 }

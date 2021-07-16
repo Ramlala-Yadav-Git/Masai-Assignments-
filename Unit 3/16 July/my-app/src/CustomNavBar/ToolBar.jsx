@@ -18,8 +18,10 @@ export function ToolBar() {
      
     }
     & > div >p{
-        margin-right:10px;
+        font-size:20px;
+        margin-right:15px;
         cursor:pointer;
+        
     }
      & > div:nth-child(1) p{
          background-color:rgb(55,71,159);
