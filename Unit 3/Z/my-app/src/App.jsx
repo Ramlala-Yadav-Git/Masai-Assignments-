@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+
 import { GitHub } from "./GitHub/GitHub"
+import { Input } from './CreditCard/Input'
 
 function App() {
   return (
     <div className="App">
-      <GitHub />
+      {/* <GitHub /> */}
+      <Input />
+
     </div>
   );
 }
