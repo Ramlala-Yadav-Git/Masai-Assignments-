@@ -1,10 +1,10 @@
 
 
-import { Todo } from "./TodoPost/ToDo"
+// import { Todo } from "./TodoPost/ToDo"
 function App() {
   return (
     <div className="App">
-      <Todo />
+      {/* <Todo /> */}
     </div>
   );
 }
