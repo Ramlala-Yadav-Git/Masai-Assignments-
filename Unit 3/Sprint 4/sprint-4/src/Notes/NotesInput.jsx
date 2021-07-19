@@ -195,7 +195,7 @@ export function NotesInput() {
         e.preventDefault();
         SendData(input)
         GetData();
-        GetData();
+        /// GetData();
         // console.log(input);
 
     }
