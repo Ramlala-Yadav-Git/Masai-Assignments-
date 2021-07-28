@@ -1,13 +1,12 @@
-import { ShowDashBoard } from "./ContextApi/ShowDashBoard"
 
-
+import { ThemeContextProvider } from "./ThemeContext/ThemeContext"
 
 function App() {
 
   return (
 
     <div>
-      <ShowDashBoard />
+      <ThemeContextProvider />
     </div>
 
 
