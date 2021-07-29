@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "name": "SmartPhone",
+            "price": 30,
+            "id": 0,
+            "pic": "https://i.ytimg.com/vi/cJKQdzopuco/maxresdefault.jpg"
+        },
+        {
+            "name": "Watch",
+            "price": 20,
+            "id": 1,
+            "pic": "https://rukminim1.flixcart.com/image/332/398/kka1si80/watch/4/t/k/tw-02524-teenager-luxurious-fashion-silicone-black-colored-led-original-imafznht7bzfmj7d.jpeg?q=50"
+        },
+        {
+            "name": "Shirt",
+            "price": 50,
+            "id": 2,
+            "pic": "https://assets.ajio.com/medias/sys_master/root/20210403/ywxs/60686961f997dd7b645dbf0c/-473Wx593H-461119026-black-MODEL.jpg"
+        },
+        {
+            "name": "Pants",
+            "price": 100,
+            "id": 3,
+            "pic": "https://assets.ajio.com/medias/sys_master/root/20210403/NNuZ/606896f4f997dd7b64618f74/-1117Wx1400H-461455469-olive-MODEL.jpg"
+        }
+    ]
+}

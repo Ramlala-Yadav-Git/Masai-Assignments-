@@ -1,12 +1,14 @@
 
 import { ThemeContextProvider } from "./ThemeContext/ThemeContext"
+import { AuthData } from "./AuthContext/AuthData"
 
 function App() {
 
   return (
 
     <div>
-      <ThemeContextProvider />
+      <AuthData />
+      {/* <ThemeContextProvider /> */}
     </div>
 
 
