@@ -1,39 +1,34 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Switch, Route, Link } from "react-router-dom"
 
 function NavBar() {
-  const links = [
-    {
-      link: "/",
-      name: "Home Page"
-    },
-    {
-      link: "/contact",
-      name: "Contact Page"
-    },
-    {
-      link: "/about-us",
-      name: "About Page"
-    },
-    {
-      link: "/services",
-      name: "Services Page"
-    },
-    {
-      link: "/login",
-      name: "Login"
-    },
-  ]
+
   return (
     <>
       <ul>
-        {
-          links.map((el, i) => {
-            return <li key={i}>
-              <Link to={el.link}>{el.name}</Link>
-            </li>
-          })
-        }</ul>
+        <li><Link role='link' to="/">Home</Link></li>
+        <li><Link role='link' to="/contact">Contact</Link></li>
+        <li><Link role='link' to="/about-us">About</Link></li>
+        <li><Link role='link' to="/services">Services</Link></li>
+        <li><Link role='link' to="/login">Login</Link></li>
+      </ul>
+      <Switch>
+        <Route exact path="/">
+          <h2>Home Page</h2>
+        </Route>
+        <Route path="/contact">
+          <h2>Contact Page</h2>
+        </Route>
+        <Route path="/services">
+          <h2>Services Page</h2>
+        </Route>
+        <Route path="/about-us">
+          <h2>About Page</h2>
+        </Route>
+        <Route path="/login">
+          <h2>Login Page</h2>
+        </Route>
+      </Switch>
     </>
   )
 }
