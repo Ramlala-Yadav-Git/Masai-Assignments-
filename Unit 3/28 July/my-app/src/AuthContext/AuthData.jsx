@@ -1,22 +1,12 @@
-import { useContext } from "react";
-import { Auth } from "./AuthContext"
-import { AuthProvider } from "./AuthContext"
-
-
-export function AuthData() {
-    const value = useContext(Auth);
-    console.log(value.a);
-    return (
-        <AuthProvider>
-
-            <div>
-                <div>
-                    <button onClick={() => value.HandleSubmit()}>Login</button>
-                    <p >Login</p>
-                    <p >Logout</p>
-                </div>
-            </div>
-        </AuthProvider>
-
-    )
+import { createContext, useState } from "react"
+import React from "react"
+import { Auth } from "./Auth";
+export const AuthContext = createContext();
+export const AuthContextProvider = ({ children }) => {
+    const [isAuth, setIsAuth] = useState(false);
+    const [token, setToken] = useState("")
+    return <AuthContext.Provider value={{ isAuth, setIsAuth, token, setToken }}>
+        {children}
+        <Auth />
+    </AuthContext.Provider>
 }
