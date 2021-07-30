@@ -1,0 +1,39 @@
+.Navbar{
+    display: flex;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(170, 169, 169, 0.288);
+}
+
+.Navbar .logo img{
+    width: 50px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.Navbar .category ul{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+.Navbar .category ul >li {
+    padding-left: 20px;
+    text-decoration: none;
+  
+}
+.Navbar .user {
+    margin-left: 35%;
+}
+.Navbar .user ul {
+     display: flex;
+    list-style: none; 
+}
+.Navbar .user ul >li{
+ padding-left: 20px;
+}
+.Navbar .user ul >li  {
+    text-decoration: none;
+}
+.decoration {
+    text-decoration: none;
+    color: rgba(29, 28, 28, 0.795);
+    font-weight: bold;
+}

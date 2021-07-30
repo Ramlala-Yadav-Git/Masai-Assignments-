@@ -1,0 +1,18 @@
+
+
+.footer{
+    margin-top:410px;
+    box-shadow: 2px 2px 2px 2px rgba(206, 199, 199, 0.288);
+    padding: 10px;
+}
+.footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    border-top: 1px solid rgba(207, 202, 202, 0.253);
+    padding: 10px;
+}
+.footer ul li{
+    padding-left: 10px;
+    color: rgb(29, 28, 28);
+}
