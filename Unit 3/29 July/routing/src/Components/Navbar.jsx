@@ -18,6 +18,12 @@ export function Navbar(params) {
         },
         {
             to: "/users", title: "Users"
+        },
+        {
+            to: "/setting", title: "Setting"
+        },
+        {
+            to: "/login", title: "Login"
         }
 
     ]
@@ -25,7 +31,7 @@ export function Navbar(params) {
 
     return (
         <>
-            <nav>
+            <nav style={{ background: "gray", color: "white" }}>
                 <ul style={{
                     display: "flex",
                     listStyle: "none",

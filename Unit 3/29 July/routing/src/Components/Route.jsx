@@ -6,6 +6,11 @@ import { Home } from "../Components/Home"
 import { Users } from "../Components/Users"
 import { Navbar } from "../Components/Navbar"
 import { UserRoute } from "../Components/UserRoute"
+import { Login } from "./Login"
+import { PrivateRoutes } from "./PrivateRoutes"
+import { Setting } from "./Setting"
+
+
 ///RegEx
 function Router() {
     return (
@@ -15,20 +20,26 @@ function Router() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/dashboard">
+                <PrivateRoutes path="/dashboard">
                     <Dashboard />
-                </Route>
+                </PrivateRoutes>
                 <Route path="/contact">
                     <Contact />
+                </Route>
+                <Route path="/setting">
+                    <Setting />
                 </Route>
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route exact path="/users">
+                <PrivateRoutes exact path="/users">
                     <UserRoute />
-                </Route>
-                <Route path="/users/:id">
+                </PrivateRoutes>
+                <PrivateRoutes path="/users/:id">
                     <Users />
+                </PrivateRoutes>
+                <Route path="/login">
+                    <Login />
                 </Route>
                 <Route>
                     404 Page Not Found

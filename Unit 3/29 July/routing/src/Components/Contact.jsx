@@ -1,6 +1,6 @@
 
 export function Contact() {
     return (
-        <h2>Contact</h2>
+        <h2 style={{ textAlign: "center" }}>Contact</h2>
     )
 }
