@@ -11,6 +11,7 @@ import { HomeAndLiving } from "../Components/Home&Living";
 import { Login } from "../Login/Login"
 import { Switch, Route } from "react-router";
 import { Footer } from "../Footer/Footer";
+import { MenItmes } from "../Components/MenItmes";
 export function Routes(params) {
 
     return (
@@ -20,9 +21,13 @@ export function Routes(params) {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/men">
+                <Route exact path="/men">
                     <Men />
                 </Route>
+                <Route path="/men/:id">
+                    <MenItmes />
+                </Route>
+
                 <Route path="/women">
                     <Women />
                 </Route>
@@ -48,6 +53,9 @@ export function Routes(params) {
 
                 <Route path="/login">
                     <Login />
+                </Route>
+                <Route>
+                    <h1>Page not found, 404</h1>
                 </Route>
             </Switch>
             <Footer />
