@@ -1,5 +1,5 @@
 // /Reducer
-import { ADD, DEC, RESET } from "./actionTypes.js"
+import { ADD, DEC, DIVIDE, MULTIPLY, RESET } from "./actionTypes.js"
 
 const initialState = {
     count: 0,
@@ -21,6 +21,18 @@ export const reducerFunction = (state = initialState, action) => {
             return {
                 ...state,
                 count: state.count - payLoad,
+
+            }
+        case MULTIPLY:
+            return {
+                ...state,
+                count: state.count * payLoad,
+
+            }
+        case DIVIDE:
+            return {
+                ...state,
+                count: state.count / payLoad,
 
             }
         case RESET:

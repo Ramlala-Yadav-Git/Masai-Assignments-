@@ -3,28 +3,17 @@ import './App.css';
 import { store } from "./store/store"
 import { addCount, decCount } from "./store/action"
 import { useState } from "react"
+import { Calculator1 } from "./Components/CalculatorFirst"
+import { Calculator2 } from "./Components/Calculator2"
+
 function App() {
-  const { count } = store.getState()
-  const [value, setValue] = useState(0)
+
 
   return (
-    <div className="App">
+    <div >
 
-
-      <h1>
-        {value}
-      </h1>
-      <button onClick={() => {
-        store.dispatch(addCount(1))
-        setValue(store.getState().count)
-        console.log(store.getState().count);
-      }}>+</button>
-      <button onClick={() => {
-        store.dispatch(decCount(1))
-        setValue(store.getState().count)
-        console.log(store.getState().count);
-      }}>-</button>
-
+      {/* <Calculator1 /> */}
+      <Calculator2 />
 
     </div>
   );
