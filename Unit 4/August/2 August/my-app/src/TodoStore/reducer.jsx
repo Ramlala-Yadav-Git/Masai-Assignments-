@@ -14,7 +14,6 @@ export const reducerFunction = (state = initialState, action) => {
     switch (type) {
         case ADDTODO:
             const { id, status, data } = payLoad;
-            console.log(state);
 
             return {
                 ...state,

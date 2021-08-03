@@ -1,0 +1,42 @@
+.counter{
+    border: 1px solid gray;
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgb(201, 190, 190);
+
+
+}
+.counter h3{
+    text-transform: uppercase;
+    color: rgb(100, 128, 0);
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 30px;
+
+}
+.counter h1{
+    text-transform: uppercase;
+    color: rgb(128, 109, 0);
+    font-weight: 800;
+    font-size: 30px;
+    border: 1px solid rgb(9, 173, 36);
+    width: 80px;
+    margin: auto;
+    border-radius: 10px;
+}
+.counter button{
+    margin: 10px;
+    margin-top: 30px;
+
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(6, 87, 6, 0.959);
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
