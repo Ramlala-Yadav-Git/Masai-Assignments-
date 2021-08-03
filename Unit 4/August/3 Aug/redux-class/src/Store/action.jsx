@@ -1,5 +1,5 @@
 
-import { ADDTODO, REMOVETODO, TOGGLETODO, ADDCOUNT, REDCOUNT } from "./actionTypes"
+import { ADDTODO, REMOVETODO, TOGGLETODO, ADDCOUNT, REDCOUNT, GETTODO, EDIT } from "./actionTypes"
 
 export const AddTodo = (payLoad) => {
 
@@ -14,20 +14,6 @@ export const AddTodo = (payLoad) => {
 
 }
 
-export const RemoveTodo = (payLoad) => {
-
-
-    return (
-
-        {
-            type: ADDTODO,
-            payLoad: payLoad
-
-        }
-
-    )
-
-}
 export const ToggleTodo = (payLoad) => {
 
 
@@ -49,6 +35,34 @@ export const removeTodo = (payLoad) => {
     return (
         {
             type: REMOVETODO,
+            payLoad
+        }
+
+
+
+
+    )
+
+}
+export const getTodo = (payLoad) => {
+
+    return (
+        {
+            type: GETTODO,
+            payLoad
+        }
+
+
+
+
+    )
+
+}
+export const SetEdit = (payLoad) => {
+
+    return (
+        {
+            type: EDIT,
             payLoad
         }
 

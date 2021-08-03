@@ -1,4 +1,4 @@
-import { ADDTODO, REMOVETODO, TOGGLETODO, ADDCOUNT, REDCOUNT } from "./actionTypes"
+import { ADDTODO, REMOVETODO, TOGGLETODO, ADDCOUNT, REDCOUNT, GETTODO, EDIT } from "./actionTypes"
 
 const initialState = {
     count: 0,
@@ -24,6 +24,14 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 data: toggledTodo
             }
+        case EDIT:
+
+            const edit = state.data.map((e) => e.id === action.payLoad.id ? { ...e, title: action.payLoad.title } : e)
+
+            return {
+                ...state,
+                data: edit
+            }
         case REMOVETODO:
             const removeTodo = state.data.filter((e) => {
                 return e.id !== action.payLoad
@@ -46,6 +54,11 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 count: state.count - 1
+            }
+        case GETTODO:
+            return {
+                ...state,
+                data: [...action.payLoad]
             }
 
         default:

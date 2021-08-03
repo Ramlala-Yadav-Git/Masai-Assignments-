@@ -5,8 +5,8 @@ function App() {
   return (
     <div className="App">
       <h1>Redux State</h1>
-      <Counter />
-      {/* <TodoList /> */}
+      {/* <Counter /> */}
+      <TodoList />
     </div>
   );
 }
