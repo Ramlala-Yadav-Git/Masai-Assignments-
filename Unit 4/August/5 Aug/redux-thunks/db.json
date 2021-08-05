@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn UseSelector Hook"
+    },
+    {
+      "title": "learn path",
+      "id": 2
+    },
+    {
+      "title": "Learn additional subjects",
+      "id": 3
+    },
+    {
+      "title": "learn javascript",
+      "id": 4
+    },
+    {
+      "title": "learn typescript",
+      "id": 5
+    },
+    {
+      "title": "learn python",
+      "id": 6
+    }
+  ]
+}
