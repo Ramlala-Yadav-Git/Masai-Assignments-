@@ -28,7 +28,6 @@ export const Register = () => {
         return <h5>Something Went Wrong</h5>
     }
     if (isAuth) {
-        alert("already registered")
         return <Redirect to="/login" />
     }
 
