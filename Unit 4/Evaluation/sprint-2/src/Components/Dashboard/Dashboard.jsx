@@ -39,18 +39,42 @@ export const Dashboard = () => {
         setData(sortedData)
 
     }
+    const handleFilter = () => {
+        let FilterData = state.data.filter((a) => {
+            return Number(a.Year) === 2011
+        })
+        setData(FilterData)
+        setSort(true)
+        ///   console.log(FilterData);
+
+    }
     return <>
         <div className={styles.items}>
             <h1>Welcome TO Dashboard</h1>
             <input type="text" placeholder="Search here your Quary" onChange={(e) => setQuary(e.target.value)} value={quary} />
             <button onClick={handleSearch}>Search</button>
             <button onClick={handleSort}>Short BY RELEASE DATE</button>
+            <button onClick={handleFilter}>Filter BY RELEASE DATE</button>
+
         </div>
         <div className={styles.movieContainer}>
 
 
             {
                 state.data && !sort && state.data.map((e, i) => {
+                    return <div key={e.imdbID} >
+                        <Link to={`/details/${e.imdbID}`}>
+                            <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />
+                        </Link>
+                        <h2> {e.Title}</h2>
+                        <h4>Relese Year: {e.Year}</h4>
+
+                    </div>
+                })
+            }
+
+            {
+                data && sort && data.map((e, i) => {
                     return <div key={e.imdbID} >
                         <Link to={`/details/${e.imdbID}`}>
                             <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />

@@ -78,3 +78,18 @@ width: 100%;
     padding: 8px;
     cursor: pointer;
 }
+.actor{
+    border: 1px solid green;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    
+}
+.actor > div{
+    text-align: left;
+    padding-left: 20px;
+}
+.actor h1{
+    color: green;
+}

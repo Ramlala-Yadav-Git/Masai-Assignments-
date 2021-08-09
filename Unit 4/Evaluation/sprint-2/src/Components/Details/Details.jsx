@@ -8,10 +8,11 @@ export const Details = () => {
     const params = useParams()
     const [data, setData] = useState({})
     const [show, showDta] = useState(false)
+    const [actor, setActor] = useState("")
     const details = () => {
         axios.get(`http://www.omdbapi.com/?apikey=7e60f6c4&i=${params.id}`).then((res) => {
             console.log(res.data.Actors.substr(0, 5));
-
+            setActor(res.data.Actors.substr(0, 5))
             setData(res.data)
         })
     }
@@ -39,7 +40,7 @@ export const Details = () => {
                 </div>
                 <div className={styles.des}>
                     <h3>{data.Title}</h3>
-                    <Link to="actor">
+                    <Link to={`${params.id}/${actor}`}>
                         <h3 >Actors : {data.Actors}</h3>
                     </Link>
                     <p>Awards : {data.Awards}</p>
