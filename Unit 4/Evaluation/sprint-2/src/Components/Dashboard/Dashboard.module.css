@@ -1,0 +1,15 @@
+.movieContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 90px;
+    margin: 20px;
+}
+.movieContainer > div img{
+    height: 300px;
+    width: 100%;
+    
+}
+.movieContainer > div {
+border: 1px solid gray;
+    
+}
