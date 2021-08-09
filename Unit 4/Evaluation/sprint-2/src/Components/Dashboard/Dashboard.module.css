@@ -25,3 +25,8 @@ border: 1px solid gray;
     border-radius: 10px;
     cursor: pointer;
 }
+.detailsButton button{
+background-color: green;
+border: none;
+
+}
