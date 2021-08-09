@@ -20,8 +20,7 @@ export const Details = () => {
 
 
     return <>
-        < h1 > Details
-        </h1 >
+
         {!show ?
             <div className={styles.detailsButton}>
                 <button onClick={showDetails}>Show Details</button>
@@ -33,16 +32,18 @@ export const Details = () => {
         {show &&
             <div className={styles.details}>
 
-
-                <img src={data.Poster} alt="" />
-                <h3>{data.Title}</h3>
-                <h3>Actors : {data.Actors}</h3>
-                <p>Awards : {data.Awards}</p>
-                <p>BoxOffice : {data.BoxOffice}</p>
-                <p>Country : {data.Country}</p>
-                <p>Director : {data.Director}</p>
-                {/* <p>Ratings : {data.Ratings[0].Value}</p> */}
-
+                <div>
+                    <img src={data.Poster} alt="" />
+                </div>
+                <div className={styles.des}>
+                    <h3>{data.Title}</h3>
+                    <h3>Actors : {data.Actors}</h3>
+                    <p>Awards : {data.Awards}</p>
+                    <p>BoxOffice : {data.BoxOffice}</p>
+                    <p>Country : {data.Country}</p>
+                    <p>Director : {data.Director}</p>
+                    <p>Storyline : {data.Plot}</p>
+                </div>
             </div>
         }
     </>
