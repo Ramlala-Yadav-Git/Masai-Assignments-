@@ -1,3 +1,4 @@
+import axios from "axios";
 import { GET_MOVIE_FAILURE, GET_MOVIE_REQUEST, GET_MOVIE_SUCCESS } from "./actionTypes";
 
 
@@ -7,15 +8,31 @@ export const movieReq = () => {
         type: GET_MOVIE_REQUEST
     }
 }
-export const movieReq = () => {
+export const movieSucc = (payload) => {
 
     return {
-        type: GET_MOVIE_REQUEST
+        type: GET_MOVIE_SUCCESS,
+        payload
     }
 }
-export const movieReq = () => {
+export const movieFail = (payload) => {
 
     return {
-        type: GET_MOVIE_REQUEST
+        type: GET_MOVIE_FAILURE,
+        payload
+    }
+}
+export const movieList = (payload) => {
+    return (dispatch) => {
+
+        dispatch(movieReq())
+        axios.get(`http://www.omdbapi.com/?apikey=7e60f6c4&s=avenger`).then((res) => {
+            console.log(res);
+            dispatch(movieSucc(res))
+        })
+            .catch((err) => {
+                dispatch(movieFail(err))
+            })
+
     }
 }
