@@ -51,3 +51,30 @@ width: 100%;
 .des{
     padding: 10px;
 }
+.items{
+    text-align: center;
+}
+
+.items h1{
+    color: rgb(3, 110, 3);
+    text-transform: uppercase;
+}
+
+.items input{
+  outline: none;
+  font-size: 20px;
+  border: none;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.items button{
+    background-color: green;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+}

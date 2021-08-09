@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 import axios from "axios";
 import { useState } from "react";
 import styles from "../Dashboard/Dashboard.module.css"
+import { Link } from "react-router-dom";
 export const Details = () => {
 
     const params = useParams()
@@ -9,7 +10,8 @@ export const Details = () => {
     const [show, showDta] = useState(false)
     const details = () => {
         axios.get(`http://www.omdbapi.com/?apikey=7e60f6c4&i=${params.id}`).then((res) => {
-            console.log(data);
+            console.log(res.data.Actors.substr(0, 5));
+
             setData(res.data)
         })
     }
@@ -37,7 +39,9 @@ export const Details = () => {
                 </div>
                 <div className={styles.des}>
                     <h3>{data.Title}</h3>
-                    <h3>Actors : {data.Actors}</h3>
+                    <Link to="actor">
+                        <h3 >Actors : {data.Actors}</h3>
+                    </Link>
                     <p>Awards : {data.Awards}</p>
                     <p>BoxOffice : {data.BoxOffice}</p>
                     <p>Country : {data.Country}</p>

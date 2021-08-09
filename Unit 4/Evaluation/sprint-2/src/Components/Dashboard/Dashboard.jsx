@@ -9,6 +9,8 @@ export const Dashboard = () => {
     const state = useSelector(state => state.Dash)
     const [quary, setQuary] = useState("")
     const [page, setPage] = useState(1)
+    const [data, setData] = useState(state.data)
+    const [sort, setSort] = useState(false)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -16,28 +18,39 @@ export const Dashboard = () => {
     }, [page])
     const handleSearch = () => {
         getData()
+
     }
     const getData = () => {
 
 
         dispatch(movieList({ quary, page }))
-
+        setData(state.data)
+        //setData(state.data)
 
     }
     const showDetails = (title) => {
 
         return <Redirect to="/details/" />
     }
+    const handleSort = () => {
+        let sortedData = state.data.sort((a, b) => {
+            return Number(a.Year) - Number(b.Year);
+        })
+        setData(sortedData)
 
+    }
     return <>
-        <h1>Hi THis is Dashboard</h1>
-        <input type="text" placeholder="Search here your Quary" onChange={(e) => setQuary(e.target.value)} value={quary} />
-        <button onClick={handleSearch}>Search</button>
+        <div className={styles.items}>
+            <h1>Welcome TO Dashboard</h1>
+            <input type="text" placeholder="Search here your Quary" onChange={(e) => setQuary(e.target.value)} value={quary} />
+            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSort}>Short BY RELEASE DATE</button>
+        </div>
         <div className={styles.movieContainer}>
 
 
             {
-                state.data && state.data.map((e, i) => {
+                state.data && !sort && state.data.map((e, i) => {
                     return <div key={e.imdbID} >
                         <Link to={`/details/${e.imdbID}`}>
                             <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />
