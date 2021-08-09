@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { movieList } from "../../Reducers/DashBoardReducer/action";
 import styles from "../Dashboard/Dashboard.module.css"
+import { Redirect } from "react-router";
 
 export const Dashboard = () => {
     const state = useSelector(state => state.Dash)
@@ -9,15 +10,21 @@ export const Dashboard = () => {
     const [page, setPage] = useState(1)
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        getData()
+    }, [page])
     const handleSearch = () => {
         getData()
     }
     const getData = () => {
-        console.log(quary);
+
 
         dispatch(movieList({ quary, page }))
-        setQuary("")
-        console.log(state);
+
+
+    }
+    const showDetails = (title) => {
+        alert(title)
     }
 
     return <>
@@ -28,9 +35,9 @@ export const Dashboard = () => {
 
 
             {
-                state.data.data && state.data.data.Search.map((e) => {
+                state.data && state.data.map((e, i) => {
                     return <div key={e.imdbID} >
-                        <img src={e.Poster} alt="poster" />
+                        <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />
 
                         <h2> {e.Title}</h2>
                         <h4>Relese Year: {e.Year}</h4>
@@ -40,8 +47,10 @@ export const Dashboard = () => {
             }
 
 
+
+
         </div>
-        <div>
+        <div className={styles.page}>
             <button onClick={() => {
                 setPage((e) => {
                     console.log(e);

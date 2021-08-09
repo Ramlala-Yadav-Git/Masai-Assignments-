@@ -18,11 +18,12 @@ export const DeshReducer = (state = initState, { type, payload }) => {
                 isError: false,
             }
         case GET_MOVIE_SUCCESS:
+            console.log(payload);
             return {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: payload
+                data: [...payload]
             }
         case GET_MOVIE_FAILURE:
             return {

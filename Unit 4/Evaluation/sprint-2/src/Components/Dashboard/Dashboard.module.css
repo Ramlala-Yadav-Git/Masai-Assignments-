@@ -7,9 +7,21 @@
 .movieContainer > div img{
     height: 300px;
     width: 100%;
+    cursor: pointer;
     
 }
 .movieContainer > div {
 border: 1px solid gray;
     
+}
+.page button{
+    border: none;
+    background-color: green;
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
 }

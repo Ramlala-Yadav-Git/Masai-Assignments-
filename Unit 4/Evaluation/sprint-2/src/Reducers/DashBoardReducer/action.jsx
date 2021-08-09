@@ -28,7 +28,7 @@ export const movieList = (payload) => {
         dispatch(movieReq());
 
         axios.get(`http://www.omdbapi.com/?apikey=7e60f6c4&s=${payload.quary}&page=${payload.page}`).then((res) => {
-            console.log(res);
+
             dispatch(movieSucc(res.data.Search))
         })
             .catch((err) => {
