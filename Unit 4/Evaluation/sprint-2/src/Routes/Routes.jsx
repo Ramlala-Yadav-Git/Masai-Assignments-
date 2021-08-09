@@ -7,15 +7,15 @@ export const Routes = () => {
 
     return <>
         <Navbar />
+
         <Switch>
 
 
             <Route exact path="/">
                 <Dashboard />
             </Route>
-            <Route path="dashboard/:id">
+            <Route path="/details/:id">
                 <Details />
-
             </Route>
         </Switch>
 

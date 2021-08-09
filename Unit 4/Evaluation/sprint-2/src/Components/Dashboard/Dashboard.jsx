@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { movieList } from "../../Reducers/DashBoardReducer/action";
 import styles from "../Dashboard/Dashboard.module.css"
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
     const state = useSelector(state => state.Dash)
@@ -24,7 +25,8 @@ export const Dashboard = () => {
 
     }
     const showDetails = (title) => {
-        alert(title)
+
+        return <Redirect to="/details/" />
     }
 
     return <>
@@ -37,8 +39,9 @@ export const Dashboard = () => {
             {
                 state.data && state.data.map((e, i) => {
                     return <div key={e.imdbID} >
-                        <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />
-
+                        <Link to={`/details/${e.imdbID}`}>
+                            <img src={e.Poster} alt="poster" onClick={() => showDetails(e.Title)} />
+                        </Link>
                         <h2> {e.Title}</h2>
                         <h4>Relese Year: {e.Year}</h4>
 
