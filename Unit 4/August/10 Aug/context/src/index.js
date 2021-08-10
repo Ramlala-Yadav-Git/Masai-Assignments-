@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import { AppContextProvider } from './Context/AppContext';
 import reportWebVitals from './reportWebVitals';
-
+import { TodoAppContextProvider } from "./Context/TodoAppContext"
 ReactDOM.render(
   <React.StrictMode>
     <AppContextProvider>
-      <App />
+      <TodoAppContextProvider>
+        <App />
+      </TodoAppContextProvider>
     </AppContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

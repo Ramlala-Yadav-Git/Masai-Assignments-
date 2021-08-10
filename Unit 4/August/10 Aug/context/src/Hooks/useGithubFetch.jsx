@@ -6,7 +6,7 @@ export function useGithubFetch(url) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState([])
     const [error, setError] = useState(false)
-    console.log(url);
+
     useEffect(() => {
 
         setLoading(true)
