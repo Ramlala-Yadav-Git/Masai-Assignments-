@@ -6,7 +6,7 @@ import { useGithubFetch } from "../Hooks/useGithubFetch";
 
 export const GithubUser = () => {
     const [quary, setQuary] = useState("")
-    const [loading, error, data] = useGithubFetch(`https://api.github.com/search/users?q=${quary}`)
+    const [loading, error, data] = useGithubFetch(`https://api.github.com/search/users?q=${quary || "masai"}`)
     if (loading) {
         return <h3>Loading....</h3>
     }
@@ -19,6 +19,9 @@ export const GithubUser = () => {
             setTimeout(() => {
                 setQuary(e.target.value)
             }, 1000)
+        }
+        else {
+            setQuary(e.target.value)
         }
 
     }

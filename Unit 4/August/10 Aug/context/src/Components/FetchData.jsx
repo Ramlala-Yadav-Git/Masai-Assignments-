@@ -1,11 +1,9 @@
 
-import { useTimeout } from "../Hooks/useTImeout"
 import { useFetch } from "../Hooks/useFetch"
 import { useState } from 'react';
 
 function FetchData() {
-    // const [ready] = useTimeout(2000)
-    // console.log(ready);
+
     const [page, setPage] = useState(1)
     const [loading, error, data] = useFetch(`https://json-server-mocker-masai.herokuapp.com/users?_page=${page}&_limit=3`)
     if (loading) {
@@ -17,6 +15,7 @@ function FetchData() {
     return (
         <div className="App">
             <h1>useContext</h1>
+
             <ul style={{ listStyle: "none" }}>
                 {
                     data.map((e) => {
