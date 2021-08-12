@@ -1,0 +1,71 @@
+.posts button{
+ 
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+.title{
+    color: rgb(61, 59, 59);
+    text-transform: uppercase;
+}
+.delete{
+    background-color: rgb(163, 6, 6);
+}
+.verify{
+    background-color: green;
+}
+.posts > div{
+ border: 1px solid gray;
+ position: relative;
+width: 50%;
+margin: auto;
+margin-top: 10px;
+padding: 10px;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+.box{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+}
+.content {
+    text-transform: capitalize;
+    color: rgb(66, 59, 59);
+   font-family: 'Times New Roman', Times, serif;
+}
+.input button{
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+    background-color: rgb(1, 78, 1);
+
+  
+}
+.input  input{
+    border-radius: 10px;
+    outline: none;
+    border:1px solid green;
+    padding: 10px;
+    width: 300px;
+    font-size: 20px;
+}
+.input  textarea{
+     border-radius: 10px;
+    outline: none;
+    border:1px solid green;
+    padding: 10px;
+    width: 300px;
+   min-height: 100px;
+   font-size: 18px;
+}

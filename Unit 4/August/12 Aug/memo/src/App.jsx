@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { Todo } from "./Components/Todo"
+import { Post } from "./Components/Memoisation/post"
 
 function App() {
   return (
     <div className="App">
-      <h1>Memo</h1>
-      <Todo />
+      {/* <Todo /> */}
+      <Post />
     </div>
   );
 }
