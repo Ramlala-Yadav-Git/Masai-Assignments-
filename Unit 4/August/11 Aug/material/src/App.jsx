@@ -1,15 +1,16 @@
-import './App.css';
-import { Theme } from "./MaterialUi/Theme"
-import { Routes } from "./Routes/Routes"
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { Dashboard } from "./Dashboard/Dashboard";
+import { SiteLayout } from "./App/Components/SiteLayout";
 
 function App() {
-
   return (
     <>
-      <div className="App">
-        {/* <Theme /> */}
-        <Routes />
-      </div>
+      <SiteLayout>
+        <Switch>
+          <Route path="/" render={() => <Dashboard />} />
+        </Switch>
+      </SiteLayout>
     </>
   );
 }
