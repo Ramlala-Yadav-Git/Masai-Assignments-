@@ -17,25 +17,29 @@ const Wrapper = styled.div`
 
 
 
-background:${(props) => props.text.length === props.length ? "green" : "gray"} ;
+background:${(props) => props.text.length === props.length * props.perBox ? "green" : "gray"} ;
 text-align: center;
 display: flex;
 justify-content: center;
 height: 100px;
 &>input{
-    color:${(props) => props.text.length === props.length ? "green" : "gray"};
-    width: 50px;
+    color:${(props) => props.text.length === props.length * props.perBox ? "green" : "gray"};
+    width: 100px;
     height: 50px;
     outline: none;
     padding: 5px;
     margin: 10px;
-    border: 2px solid ${(props) => props.text.length === props.length ? "green" : "gray"} ;
+    border: 2px solid ${(props) => props.text.length === props.length * props.perBox ? "green" : "gray"} ;
     border-radius: 10px;
     font-weight: 500;
     font-size: 30px;
     text-align: center;
    
 }
+
+
+
+
 `
 
 export const PinItem = forwardRef((props, ref) => {
@@ -61,7 +65,7 @@ export const PinItem = forwardRef((props, ref) => {
 
     return <>
 
-        <Wrapper text={props.text} length={props.length}>
+        <Wrapper text={props.text} length={props.length} perBox={props.maxLength}>
             <input
 
                 ref={ref}
