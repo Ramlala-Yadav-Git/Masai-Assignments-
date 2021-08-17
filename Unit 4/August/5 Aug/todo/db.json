@@ -1,0 +1,64 @@
+{
+  "todos": [
+    {
+      "title": "Web Development",
+      "date": "14-aug",
+      "task": [
+        {
+          "task": "MONGODB",
+          "status": false,
+          "id": "b5cc33d4-e832-452e-8f66-83be1f03921e"
+        }
+      ],
+      "description": "Roadmap to Web ",
+      "type": "OFFICIAL",
+      "progress": "TODO",
+      "id": 1
+    },
+    {
+      "title": "Frontend",
+      "date": "14-aug",
+      "task": [
+        {
+          "task": "HTML",
+          "status": false,
+          "id": "7b1c50fc-05cc-4831-835f-cb20d63fd264"
+        },
+        {
+          "task": "CSS",
+          "status": false,
+          "id": "1fff2808-2c9d-4126-b896-e5d1b6f7bf2b"
+        },
+        {
+          "task": "REact",
+          "status": false,
+          "id": "c2038b2c-6808-406b-a57d-620ea2283054"
+        }
+      ],
+      "description": "FROnTED technologies",
+      "type": "PERSONAL",
+      "progress": "INPROGRESS",
+      "id": 2
+    },
+    {
+      "title": "Go to market",
+      "date": "123",
+      "task": [
+        {
+          "task": "buy jersey",
+          "status": true,
+          "id": "e4032d60-1a08-4008-865a-b82a3db2a45b"
+        },
+        {
+          "task": "buy calender",
+          "status": false,
+          "id": "833bb166-f9db-4fc7-bc87-749cc4d4491b"
+        }
+      ],
+      "description": "buy apple",
+      "type": "OFFICIAL",
+      "progress": "TODO",
+      "id": 3
+    }
+  ]
+}
