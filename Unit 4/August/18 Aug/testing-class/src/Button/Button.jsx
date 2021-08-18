@@ -6,7 +6,7 @@ export function Button({ label, onClick }) {
 
     return (<>
 
-        <div data-testId="button" onClick={onClick} className={styles.Button}>
+        <div data-testid="button" onClick={onClick} className={styles.Button}>
             {label}
         </div>
     </>)

@@ -28,7 +28,7 @@ describe("Counter.jsx tests", () => {
 
     it('should increase count and decrease count when clicked', () => {
         render(<Counter />)
-        const value = screen.getAllByTestId(testIds.value)
+        const value = screen.getByTestId(testIds.value)
         const [add, reduce] = screen.getAllByTestId(testIds.button)
 
 

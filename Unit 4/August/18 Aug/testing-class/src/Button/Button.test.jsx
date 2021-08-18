@@ -46,7 +46,7 @@ describe("Button.jsx testing", () => {
     it('should match the snapshot', () => {
         const text = "Button"
         const tree = renderer.create(
-            <Button data-testid="button" onClick={() => { }} label={text} />
+            <Button onClick={() => { }} label={text} />
         )
         expect(tree).toMatchSnapshot()
     })
