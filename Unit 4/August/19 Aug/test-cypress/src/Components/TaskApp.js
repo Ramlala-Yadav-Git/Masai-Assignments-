@@ -22,20 +22,28 @@ export default function TodoApp() {
         'Content-type': 'application/json'
       },
       body: JSON.stringify(payload)
-    }).then(res => res.json())
+    }).then(res => {
+      if (res.status >= 200 && res.status <= 299) {
+        return res.json();
+      } else {
+        throw Error(res.statusText);
+      }
+    })
       .then(res => setTodos([...todos, res]))
       .catch(err => {
-        setErr(false)
+        return setErr(true)
       })
   }
 
   useEffect(() => {
     fetch('/tasks')
-      .then(res => res.json())
+      .then(res => {
+        return res.json()
+      })
       .then(res => {
         setTodos(res)
       })
-      .catch((err) => {
+      .catch((error) => {
         setErr(true)
       })
   }, [])

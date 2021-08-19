@@ -29,7 +29,7 @@ describe("sample test", () => {
 
 
     it('visit home page', () => {
-        cy.visit("http://localhost:3000/")
+        // cy.visit("http://localhost:3000/")
 
         cy.get('h1')
             .should('have.text', 'Tasks')
@@ -75,9 +75,13 @@ describe("sample test", () => {
                 id: 3
             }
         })
-        cy.get(".error")
 
-            .should('be.visible')
+        cy.get('.task-input')
+            .type(text)
+            .type('{enter}')
+
+
+        cy.get(".error").contains('Something went wrong')
 
     })
 })
