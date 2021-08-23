@@ -1,22 +1,9 @@
 {
-  "data": [
-    {
-      "name": "rohan",
-      "number": 213154545,
-      "id": 1
-    },
-    {
-      "name": "rewr",
-      "number": "4324",
-      "id": 2
-    },
-    {
-      "name": "erqr",
-      "number": "",
-      "dob": "",
-      "startDate": "",
-      "endDate": "",
-      "id": 3
-    }
-  ]
+    "data": [
+        {
+            "name": "rohan",
+            "number": 213154545,
+            "id": 1
+        }
+    ]
 }

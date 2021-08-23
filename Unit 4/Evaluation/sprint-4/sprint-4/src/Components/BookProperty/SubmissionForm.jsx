@@ -4,7 +4,6 @@ import { useState } from 'react';
 import React from 'react';
 import { useSuccessNotification } from './SuccessNotification';
 import { Link } from 'react-router-dom';
-import { StylesContext } from '@material-ui/styles';
 import styles from "./BookProperty.module.css"
 import axios from 'axios';
 
@@ -52,13 +51,14 @@ export const SubmissionForm = () => {
     return <>
         <div className={styles.submission}>
             <div>
-                <Input placeholder="Enter Your Full Name ..." type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                <Input placeholder="Enter Full Name ..." type="text" onChange={(e) => setName(e.target.value)} value={name} />
                 <br />
                 <br />
-                <Input placeholder="Enter Your Phone Number" type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
+                <Input placeholder="Enter Phone Number ..." type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
                 <br />
                 <br />
-                <DatePickers label={"Birthday"} className={styles.datePicker} onChange={(e) => setDob(e.target.value)} />
+
+                <DatePickers label={"Birth date"} className={styles.datePicker} onChange={(e) => setDob(e.target.value)} />
                 <br />
                 <br />
                 <DatePickers label={"Booking date Start"} className={styles.datePicker} onChange={(e) => setStartDate(e.target.value)} />
@@ -67,6 +67,7 @@ export const SubmissionForm = () => {
                 <DatePickers label={"Booking date End"} className={styles.datePicker} onChange={(e) => setEndDate(e.target.value)} />
                 <br />
                 <br />
+
                 <Button variant="contained" color="primary" onClick={handleSubmit}>
                     Submit
                 </Button>
@@ -112,7 +113,7 @@ export default function DatePickers({ label }) {
     const classes = useStyles();
 
     return (
-        <form className={classes.container} noValidate>
+        <form className={classes.container} >
             <TextField
                 id="date"
                 label={label}
