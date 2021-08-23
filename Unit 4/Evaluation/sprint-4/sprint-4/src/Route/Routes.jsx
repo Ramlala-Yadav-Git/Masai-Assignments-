@@ -1,6 +1,6 @@
 
 import { Route, Link, Switch } from "react-router-dom"
-import { BookProperty } from "../Components/BookProperty/BookProperty"
+import { Home } from "../Components/BookProperty/Home"
 import { SubmissionForm } from "../Components/BookProperty/SubmissionForm"
 import { UsdConverter } from "../Components/usdConverter/usdConverterInput"
 export const Routes = () => {
@@ -14,7 +14,7 @@ export const Routes = () => {
         <div>
             <Switch>
                 <Route exact path="/">
-                    <BookProperty />
+                    <Home />
                 </Route>
                 <Route path="/usd">
                     <UsdConverter />
