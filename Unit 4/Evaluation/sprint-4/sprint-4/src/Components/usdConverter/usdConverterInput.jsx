@@ -33,8 +33,9 @@ export function UsdConverter() {
             <form onSubmit={handleSubmit}>
                 <input type="number" placeholder="Enter ₹" onChange={(e) => setInput(e.target.value)} value={input} />
                 <select onChange={(e) => handleSelect(e)}>
-                    <option value="rupee">₹</option>
-                    <option value="dolar">$</option>
+                    <option value="Select Currency" disabled>Select Currency</option>
+                    <option value="rupee">₹ Rupee</option>
+                    <option value="dolar">$ Dollar</option>
                 </select>
                 <input type="submit" value="Submit" />
             </form>

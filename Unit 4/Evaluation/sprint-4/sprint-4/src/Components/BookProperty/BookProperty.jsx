@@ -3,7 +3,7 @@ import { SubmissionForm } from './SubmissionForm';
 import { Redirect, Link } from 'react-router-dom';
 
 
-export const BookProperty = ({ url, review, rating, rate }) => {
+export const BookProperty = ({ url, review, rating, rate, title, add }) => {
 
 
 
@@ -18,8 +18,8 @@ export const BookProperty = ({ url, review, rating, rate }) => {
                 </div>
             </Link>
             <div className={styles.midSection}>
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</h2>
-                <h3>Lorem ipsum dolor sit amet.</h3>
+                <h2>{title}</h2>
+                <h3>{add}</h3>
                 <div>
 
 

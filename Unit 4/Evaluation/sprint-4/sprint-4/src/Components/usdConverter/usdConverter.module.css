@@ -1,3 +1,12 @@
 .usdConverter{
-    border: 1px solid black;
+    border: 1px solid gray;
+    width: 500px;
+    margin:auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.usdConverter input, .usdConverter select {
+    display: block;
+    margin: 10px;
 }
