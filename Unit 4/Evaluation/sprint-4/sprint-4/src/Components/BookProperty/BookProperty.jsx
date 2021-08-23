@@ -1,6 +1,5 @@
 import styles from "./BookProperty.module.css"
-import { SubmissionForm } from './SubmissionForm';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export const BookProperty = ({ url, review, rating, rate, title, add }) => {
