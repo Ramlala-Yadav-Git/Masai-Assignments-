@@ -1,15 +1,18 @@
 import Box from '@material-ui/core/Box';
 import styles from "./BookProperty.module.css"
 import { SubmissionForm } from './SubmissionForm';
+import { Redirect } from 'react-router-dom';
 
 
 export const BookProperty = () => {
 
-
+    const handleClick = () => {
+        return <Redirect to="/submitForm" />
+    }
 
 
     return <>
-        <div className={styles.book}>
+        <div className={styles.book} onClick={handleClick}>
             <div>
                 <img src="https://picsum.photos/200/300" alt="pic" />
 
@@ -30,6 +33,6 @@ export const BookProperty = () => {
                 </div>
             </div>
         </div>
-        <SubmissionForm />
+
     </>
 }

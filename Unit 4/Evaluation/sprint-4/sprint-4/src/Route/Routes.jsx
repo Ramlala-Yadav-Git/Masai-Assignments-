@@ -1,6 +1,7 @@
 
 import { Route, Link, Switch } from "react-router-dom"
 import { BookProperty } from "../Components/BookProperty/BookProperty"
+import { SubmissionForm } from "../Components/BookProperty/SubmissionForm"
 import { UsdConverter } from "../Components/usdConverter/usdConverterInput"
 export const Routes = () => {
 
@@ -17,6 +18,9 @@ export const Routes = () => {
                 </Route>
                 <Route path="/usd">
                     <UsdConverter />
+                </Route>
+                <Route path="/submitForm">
+                    <SubmissionForm />
                 </Route>
             </Switch>
         </div>

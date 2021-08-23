@@ -1,6 +1,5 @@
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
-import Alert from '@material-ui/core/Alert';
 import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 import { Typography } from '@material-ui/core';
@@ -22,8 +21,12 @@ export const SubmissionForm = () => {
         setNumber("")
         setSure(!sure);
         console.log(successAlert);
-
+        setSuccesAlert(true)
+        setTimeout(() => {
+            setSuccesAlert(false)
+        }, 2000)
     }
+
 
 
     const handleClose = () => {
@@ -43,8 +46,13 @@ export const SubmissionForm = () => {
 
 
         </div>
-        <Alert severity="success">This is a success alert — check it out!</Alert>
-
+        {
+            successAlert && <div>
+                <h3>
+                    Your request has been successfully filled!
+                </h3>
+            </div>
+        }
     </>
 }
 
