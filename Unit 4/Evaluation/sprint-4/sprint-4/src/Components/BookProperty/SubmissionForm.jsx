@@ -1,11 +1,9 @@
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
-import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
-import { Typography } from '@material-ui/core';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useSuccessNotification } from './SuccessNotification';
+import { Link } from 'react-router-dom';
 
 
 export const SubmissionForm = () => {
@@ -29,12 +27,9 @@ export const SubmissionForm = () => {
 
 
 
-    const handleClose = () => {
-        alert("fhaskh")
-    }
-    const handleOpen = () => {
 
-    }
+
+
 
     return <>
         <div>
@@ -53,6 +48,13 @@ export const SubmissionForm = () => {
                 </h3>
             </div>
         }
+        <Button variant="outlined" color="primary">
+            <Link to="/">
+                Back
+            </Link>
+
+
+        </Button>
     </>
 }
 
