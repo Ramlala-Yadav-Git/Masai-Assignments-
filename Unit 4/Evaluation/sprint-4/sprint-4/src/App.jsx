@@ -1,5 +1,5 @@
 import './App.css';
-import { UsdConverter } from "./Components/usdConverterInput"
+import { UsdConverter } from "./Components/usdConverter/usdConverterInput"
 function App() {
   return (
     <div className="App">
