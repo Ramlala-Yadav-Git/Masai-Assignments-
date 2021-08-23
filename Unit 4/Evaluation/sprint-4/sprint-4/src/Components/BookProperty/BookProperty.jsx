@@ -1,5 +1,7 @@
 import Box from '@material-ui/core/Box';
 import styles from "./BookProperty.module.css"
+import { SubmissionForm } from './SubmissionForm';
+
 
 export const BookProperty = () => {
 
@@ -28,6 +30,6 @@ export const BookProperty = () => {
                 </div>
             </div>
         </div>
-
+        <SubmissionForm />
     </>
 }
