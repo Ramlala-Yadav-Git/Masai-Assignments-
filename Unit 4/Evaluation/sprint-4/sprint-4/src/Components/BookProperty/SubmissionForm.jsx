@@ -18,12 +18,18 @@ export const SubmissionForm = () => {
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
     const [sure, setSure] = useState(false)
+    const [dob, setDob] = useState("")
+    const [startDate, setStartDate] = useState("")
+    const [endDate, setEndDate] = useState("")
     const { successAlert, setSuccesAlert } = useSuccessNotification(false)
 
     const handleSubmit = () => {
         const payload = {
             name: name,
-            number: number
+            number: number,
+            dob: dob,
+            startDate: startDate,
+            endDate: endDate
         }
         alert("Are you Sure");
         axios.post("http://localhost:3001/data", payload)
@@ -52,13 +58,13 @@ export const SubmissionForm = () => {
                 <Input placeholder="Enter Your Phone Number" type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
                 <br />
                 <br />
-                <DatePickers label={"Birthday"} className={styles.datePicker} />
+                <DatePickers label={"Birthday"} className={styles.datePicker} onChange={(e) => setDob(e.target.value)} />
                 <br />
                 <br />
-                <DatePickers label={"Booking date Start"} className={styles.datePicker} />
+                <DatePickers label={"Booking date Start"} className={styles.datePicker} onChange={(e) => setStartDate(e.target.value)} />
                 <br />
                 <br />
-                <DatePickers label={"Booking date End"} className={styles.datePicker} />
+                <DatePickers label={"Booking date End"} className={styles.datePicker} onChange={(e) => setEndDate(e.target.value)} />
                 <br />
                 <br />
                 <Button variant="contained" color="primary" onClick={handleSubmit}>
@@ -111,7 +117,7 @@ export default function DatePickers({ label }) {
                 id="date"
                 label={label}
                 type="date"
-                defaultValue="2017-05-24"
+                defaultValue="2021-08-23"
                 className={classes.textField}
                 InputLabelProps={{
                     shrink: true,
