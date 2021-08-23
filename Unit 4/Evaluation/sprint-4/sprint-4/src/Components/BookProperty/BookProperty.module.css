@@ -1,0 +1,19 @@
+.book {
+  
+    display: flex;
+    justify-content: space-between;
+    border:1px solid black ;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+.midSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rightSection{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}

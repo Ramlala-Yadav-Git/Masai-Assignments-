@@ -1,9 +1,9 @@
 import './App.css';
-import { UsdConverter } from "./Components/usdConverter/usdConverterInput"
+import { Routes } from './Route/Routes';
 function App() {
   return (
     <div className="App">
-      <UsdConverter />
+      <Routes />
     </div>
   );
 }
