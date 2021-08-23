@@ -8,6 +8,10 @@ import { StylesContext } from '@material-ui/styles';
 import styles from "./BookProperty.module.css"
 import axios from 'axios';
 
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
 
 export const SubmissionForm = () => {
 
@@ -48,6 +52,15 @@ export const SubmissionForm = () => {
                 <Input placeholder="Enter Your Phone Number" type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
                 <br />
                 <br />
+                <DatePickers label={"Birthday"} className={styles.datePicker} />
+                <br />
+                <br />
+                <DatePickers label={"Booking date Start"} className={styles.datePicker} />
+                <br />
+                <br />
+                <DatePickers label={"Booking date End"} className={styles.datePicker} />
+                <br />
+                <br />
                 <Button variant="contained" color="primary" onClick={handleSubmit}>
                     Submit
                 </Button>
@@ -76,4 +89,35 @@ export const SubmissionForm = () => {
 
 
 
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing(73),
+        marginRight: theme.spacing(1),
+        width: 200,
+    },
+}));
+
+export default function DatePickers({ label }) {
+    const classes = useStyles();
+
+    return (
+        <form className={classes.container} noValidate>
+            <TextField
+                id="date"
+                label={label}
+                type="date"
+                defaultValue="2017-05-24"
+                className={classes.textField}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+            />
+        </form>
+    );
+}
 

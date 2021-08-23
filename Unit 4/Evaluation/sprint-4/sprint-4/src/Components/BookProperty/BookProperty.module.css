@@ -9,6 +9,7 @@
 
     padding-left: 10%;
     padding-right: 10%;
+    color: rgb(44, 44, 44);
 
 }
 .midSection{
@@ -64,4 +65,8 @@ padding-left: 10px;
     color:  rgb(9, 170, 9);
     border-radius: 10px;
     transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.datePicker{
+    border: 1px solid black;
 }
