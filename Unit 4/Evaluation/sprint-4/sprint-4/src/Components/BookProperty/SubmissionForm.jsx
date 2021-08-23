@@ -4,6 +4,9 @@ import { useState } from 'react';
 import React from 'react';
 import { useSuccessNotification } from './SuccessNotification';
 import { Link } from 'react-router-dom';
+import { StylesContext } from '@material-ui/styles';
+import styles from "./BookProperty.module.css"
+import axios from 'axios';
 
 
 export const SubmissionForm = () => {
@@ -14,7 +17,12 @@ export const SubmissionForm = () => {
     const { successAlert, setSuccesAlert } = useSuccessNotification(false)
 
     const handleSubmit = () => {
-        alert("Are you Sure")
+        const payload = {
+            name: name,
+            number: number
+        }
+        alert("Are you Sure");
+        axios.post("http://localhost:3001/data", payload)
         setName("")
         setNumber("")
         setSure(!sure);
@@ -32,29 +40,36 @@ export const SubmissionForm = () => {
 
 
     return <>
-        <div>
-            <Input placeholder="Enter Your Full Name ..." type="text" onChange={(e) => setName(e.target.value)} value={name} />
-            <Input placeholder="Enter Your Phone Number" type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-                Submit
-            </Button>
+        <div className={styles.submission}>
+            <div>
+                <Input placeholder="Enter Your Full Name ..." type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                <br />
+                <br />
+                <Input placeholder="Enter Your Phone Number" type="number" onChange={(e) => setNumber(e.target.value)} value={number} />
+                <br />
+                <br />
+                <Button variant="contained" color="primary" onClick={handleSubmit}>
+                    Submit
+                </Button>
+                <br />
+                <br />
 
-
-        </div>
-        {
-            successAlert && <div>
-                <h3>
-                    Your request has been successfully filled!
-                </h3>
             </div>
-        }
-        <Button variant="outlined" color="primary">
-            <Link to="/">
-                Back
-            </Link>
+            {
+                successAlert && <div className={styles.alert}>
+                    <h3>
+                        Your request has been successfully filled!
+                    </h3>
+                </div>
+            }
+            <Button variant="outlined" color="primary">
+                <Link to="/">
+                    Back
+                </Link>
 
 
-        </Button>
+            </Button>
+        </div>
     </>
 }
 

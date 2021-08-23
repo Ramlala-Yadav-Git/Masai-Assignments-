@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import styles from "./usdConverter.module.css"
 
 export function UsdConverter() {
 
@@ -29,16 +29,18 @@ export function UsdConverter() {
     }
 
     return (<>
-        <form onSubmit={handleSubmit}>
-            <input type="number" placeholder="Enter ₹" onChange={(e) => setInput(e.target.value)} value={input} />
-            <select onChange={(e) => handleSelect(e)}>
-                <option value="rupee">₹</option>
-                <option value="dolar">$</option>
-            </select>
-            <input type="submit" value="Submit" />
-        </form>
-        <div>
-            <h1>{data}</h1>
+        <div className={styles.usdConverter}>
+            <form onSubmit={handleSubmit}>
+                <input type="number" placeholder="Enter ₹" onChange={(e) => setInput(e.target.value)} value={input} />
+                <select onChange={(e) => handleSelect(e)}>
+                    <option value="rupee">₹</option>
+                    <option value="dolar">$</option>
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
+            <div>
+                <h1>{data}</h1>
+            </div>
         </div>
     </>)
 }
