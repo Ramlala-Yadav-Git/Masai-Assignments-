@@ -1,0 +1,27 @@
+.counter{
+    border: 1px solid rgb(9, 118, 207);
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+}
+.counter h1{
+  
+    color:  rgb(9, 118, 207);
+}
+.counter h3{
+  
+color: rgb(2, 33, 58) ;
+font-size: 30px;
+}
+.counter button{
+  
+    color:  white;
+    width: 100px;
+    padding: 5px;
+    font-size: 24px;
+    margin: 1%;
+    background-color:  rgb(9, 118, 207);;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
