@@ -1,0 +1,38 @@
+.todo{
+    border: 1px solid greenyellow;
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+.todo li{ 
+   list-style: none;
+}
+.edit{
+    border: 1px solid green;
+    position: absolute;
+    top: 100px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 4;
+    left: 200px;
+}
+.edit input{
+
+margin-bottom: 10px;
+}
+.edit button{
+
+width: 100px;
+text-align: center;
+margin-left: 20%;
+
+}
