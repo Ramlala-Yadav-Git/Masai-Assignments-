@@ -1,0 +1,16 @@
+{
+  "name": "w1-d2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node readline/server"
+  },
+  "keywords": [],
+  "author": "Ramlala Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.1.1"
+  }
+}
