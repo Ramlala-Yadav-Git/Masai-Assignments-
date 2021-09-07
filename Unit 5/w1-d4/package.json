@@ -1,0 +1,13 @@
+{
+  "name": "w1-d4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon We/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

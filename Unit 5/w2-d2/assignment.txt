@@ -1,0 +1,205 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\RAMLALA>mongo
+MongoDB shell version v5.0.2
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c082bb4e-4623-4811-9aca-fdb09db68c85") }
+MongoDB server version: 5.0.2
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-09-07T10:03:36.133+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> use assignments
+switched to db assignments
+> db.assignments.find()
+> db.users.find().pretty()
+> db.usersfind()
+uncaught exception: TypeError: db.usersfind is not a function :
+@(shell):1:1
+> db.users.find()
+> db.users.insert({firstName:"Ram"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("613712f76c68e8649f8a5437"), "firstName" : "Ram" }
+> db.users.insertMany([{firstName:"Somesh"},{firstName:"dhaval"},{firstName:"pankaj"},{firstName:"abdul"},{firstName:"ld"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613713936c68e8649f8a5438"),
+                ObjectId("613713936c68e8649f8a5439"),
+                ObjectId("613713936c68e8649f8a543a"),
+                ObjectId("613713936c68e8649f8a543b"),
+                ObjectId("613713936c68e8649f8a543c")
+        ]
+}
+> db.users.find().pretty()
+{ "_id" : ObjectId("613712f76c68e8649f8a5437"), "firstName" : "Ram" }
+{ "_id" : ObjectId("613713936c68e8649f8a5438"), "firstName" : "Somesh" }
+{ "_id" : ObjectId("613713936c68e8649f8a5439"), "firstName" : "dhaval" }
+{ "_id" : ObjectId("613713936c68e8649f8a543a"), "firstName" : "pankaj" }
+{ "_id" : ObjectId("613713936c68e8649f8a543b"), "firstName" : "abdul" }
+{ "_id" : ObjectId("613713936c68e8649f8a543c"), "firstName" : "ld" }
+> db.users.find({firstName:"Somesh"})
+{ "_id" : ObjectId("613713936c68e8649f8a5438"), "firstName" : "Somesh" }
+> db.users.findOne({firstName:"Somesh"})
+{ "_id" : ObjectId("613713936c68e8649f8a5438"), "firstName" : "Somesh" }
+> db.users.update({firstName:"Somesh"},{$set:{firstName:"Somesh Kumar"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.findOne({firstName:"Somesh"})
+null
+> db.users.findOne({firstName:"Somesh Kumar"})
+{
+        "_id" : ObjectId("613713936c68e8649f8a5438"),
+        "firstName" : "Somesh Kumar"
+}
+> db.users.remove({firstName:"Somesh Kumar"})
+WriteResult({ "nRemoved" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("613712f76c68e8649f8a5437"), "firstName" : "Ram" }
+{ "_id" : ObjectId("613713936c68e8649f8a5439"), "firstName" : "dhaval" }
+{ "_id" : ObjectId("613713936c68e8649f8a543a"), "firstName" : "pankaj" }
+{ "_id" : ObjectId("613713936c68e8649f8a543b"), "firstName" : "abdul" }
+{ "_id" : ObjectId("613713936c68e8649f8a543c"), "firstName" : "ld" }
+> db.users.drop()
+true
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> db.assingments.drop()
+false
+> assignments.drop()
+uncaught exception: ReferenceError: assignments is not defined :
+@(shell):1:1
+> dropDatabase()
+uncaught exception: ReferenceError: dropDatabase is not defined :
+@(shell):1:1
+> db.help()
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
+        db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+        db.auth(username, password)
+        db.commandHelp(name) returns the help for the command
+        db.createUser(userDocument)
+        db.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase(writeConcern)
+        db.dropUser(username)
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSecondaryOk() allow queries on a replication secondary server
+        db.getName()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.hello() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSecondaryReplicationInfo()
+        db.rotateCertificates(message) - rotates certificates, CRLs, and CA files and logs an optional message
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,slowms) 0=off 1=slow 2=all
+        db.setVerboseShell(flag) display extra information in shell output
+        db.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db
+        db.shutdownServer()
+        db.stats()
+        db.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db
+        db.version() current version of the server
+        db.watch() - opens a change stream cursor for a database to report on all  changes to its non-system collections.
+> db.dropDatabse("deleting data")
+uncaught exception: TypeError: db.dropDatabse is not a function :
+@(shell):1:1
+> db.dropDatabase()
+{ "ok" : 1 }
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> db.dropDatase()
+uncaught exception: TypeError: db.dropDatase is not a function :
+@(shell):1:1
+> db.dropDatabase()
+{ "ok" : 1 }
+> show database
+uncaught exception: Error: don't know how to show [database] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> use assingnments
+switched to db assingnments
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> db.dropDatabase()
+{ "ok" : 1 }
+> show databases()
+uncaught exception: Error: don't know how to show [databases()] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show databases
+admin        0.000GB
+assingments  0.000GB
+config       0.000GB
+local        0.000GB
+> use assingments
+switched to db assingments
+> db.dropDatabase()
+{ "ok" : 1 }
+> show databases
+admin   0.000GB
+config  0.000GB
+local   0.000GB
