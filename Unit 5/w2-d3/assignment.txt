@@ -1,0 +1,1989 @@
+
+
+C:\Users\RAMLALA>mongo
+MongoDB shell version v5.0.2
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("006a98d5-1553-462f-b341-8e13e79da7a5") }
+MongoDB server version: 5.0.2
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-09-07T10:03:36.133+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use test
+switched to db test
+> show collections
+> db.createCollection("user")
+{ "ok" : 1 }
+> show collections
+user
+> db.test.insert({firstName:"Ramlala", lastName:"Yadav"})
+WriteResult({ "nInserted" : 1 })
+> db.user.find()
+> db.user.find({})
+>
+> db.user.find({firstName:"Ramlala"})
+> show collections
+test
+user
+> use user
+switched to db user
+> db.user.find()
+>
+> db.test.find()
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+> use test
+switched to db test
+> db.test.find()
+{ "_id" : ObjectId("61399642578901bc45a9423a"), "firstName" : "Ramlala", "lastName" : "Yadav" }
+> db.user.find()
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+user    0.000GB
+> use movie
+switched to db movie
+> db.createCollection("movies")
+{ "ok" : 1 }
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+user    0.000GB
+> use movie
+switched to db movie
+> db.createCollection("movies")
+{ "ok" : 1 }
+> db.movies.find().pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a14"),
+        "id" : 7,
+        "movieName" : "Stake Land",
+        "movieGenre" : "Horror",
+        "productionYear" : 1945,
+        "budget" : 10979
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a16"),
+        "id" : 9,
+        "movieName" : "Star Kid",
+        "movieGenre" : "Adventure|Children|Fantasy|Sci-Fi",
+        "productionYear" : 1962,
+        "budget" : 9653
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1a"),
+        "id" : 13,
+        "movieName" : "In the Folds of the Flesh",
+        "movieGenre" : "Drama|Horror|Thriller",
+        "productionYear" : 1961,
+        "budget" : 10379
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1f"),
+        "id" : 18,
+        "movieName" : "Chatroom",
+        "movieGenre" : "Crime|Drama|Mystery|Thriller",
+        "productionYear" : 1982,
+        "budget" : 9231
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+Type "it" for more
+> db.movies.find({"movieName":"Star Kid"}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a16"),
+        "id" : 9,
+        "movieName" : "Star Kid",
+        "movieGenre" : "Adventure|Children|Fantasy|Sci-Fi",
+        "productionYear" : 1962,
+        "budget" : 9653
+}
+> db.movies.find({"movieName":{$ne:"Star Kid"}}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a14"),
+        "id" : 7,
+        "movieName" : "Stake Land",
+        "movieGenre" : "Horror",
+        "productionYear" : 1945,
+        "budget" : 10979
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1a"),
+        "id" : 13,
+        "movieName" : "In the Folds of the Flesh",
+        "movieGenre" : "Drama|Horror|Thriller",
+        "productionYear" : 1961,
+        "budget" : 10379
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1f"),
+        "id" : 18,
+        "movieName" : "Chatroom",
+        "movieGenre" : "Crime|Drama|Mystery|Thriller",
+        "productionYear" : 1982,
+        "budget" : 9231
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a22"),
+        "id" : 21,
+        "movieName" : "Sierra, La",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2017,
+        "budget" : 12781
+}
+Type "it" for more
+> db.movies.find({"budget":{$gte:"12000"}}).pretty()
+> db.movies.find({"budget":{$gte:12000}}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a22"),
+        "id" : 21,
+        "movieName" : "Sierra, La",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2017,
+        "budget" : 12781
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a23"),
+        "id" : 22,
+        "movieName" : "Made of Honor",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 1989,
+        "budget" : 19458
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a24"),
+        "id" : 23,
+        "movieName" : "Watch on the Rhine",
+        "movieGenre" : "Drama",
+        "productionYear" : 1988,
+        "budget" : 18340
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a26"),
+        "id" : 25,
+        "movieName" : "Ocean's Eleven (a.k.a. Ocean's 11)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2010,
+        "budget" : 15361
+}
+Type "it" for more
+> db.movies.find({"budget":{$gt:12000}}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a22"),
+        "id" : 21,
+        "movieName" : "Sierra, La",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2017,
+        "budget" : 12781
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a23"),
+        "id" : 22,
+        "movieName" : "Made of Honor",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 1989,
+        "budget" : 19458
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a24"),
+        "id" : 23,
+        "movieName" : "Watch on the Rhine",
+        "movieGenre" : "Drama",
+        "productionYear" : 1988,
+        "budget" : 18340
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a26"),
+        "id" : 25,
+        "movieName" : "Ocean's Eleven (a.k.a. Ocean's 11)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2010,
+        "budget" : 15361
+}
+Type "it" for more
+> db.movies.find({"productionYear":{$gt:2000}}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a22"),
+        "id" : 21,
+        "movieName" : "Sierra, La",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2017,
+        "budget" : 12781
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a26"),
+        "id" : 25,
+        "movieName" : "Ocean's Eleven (a.k.a. Ocean's 11)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2010,
+        "budget" : 15361
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a28"),
+        "id" : 27,
+        "movieName" : "Silent Witness (Do Not Disturb)",
+        "movieGenre" : "Action|Comedy|Thriller",
+        "productionYear" : 2018,
+        "budget" : 16557
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2c"),
+        "id" : 31,
+        "movieName" : "Non-Stop",
+        "movieGenre" : "Action|Comedy|Crime",
+        "productionYear" : 2014,
+        "budget" : 10715
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2f"),
+        "id" : 34,
+        "movieName" : "Way Back, The",
+        "movieGenre" : "Drama",
+        "productionYear" : 2015,
+        "budget" : 16338
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a3f"),
+        "id" : 50,
+        "movieName" : "À nos amours",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2015,
+        "budget" : 18078
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a41"),
+        "id" : 52,
+        "movieName" : "Whores' Glory",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2011,
+        "budget" : 18416
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a45"),
+        "id" : 56,
+        "movieName" : "Miranda",
+        "movieGenre" : "Romance|Thriller",
+        "productionYear" : 2016,
+        "budget" : 15560
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a67"),
+        "id" : 90,
+        "movieName" : "Yours, Mine and Ours",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2017,
+        "budget" : 14459
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a6b"),
+        "id" : 94,
+        "movieName" : "Downloading Nancy",
+        "movieGenre" : "Drama|Thriller",
+        "productionYear" : 2020,
+        "budget" : 12413
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a6c"),
+        "id" : 95,
+        "movieName" : "Scarlet Letter, The",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2015,
+        "budget" : 15298
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a71"),
+        "id" : 100,
+        "movieName" : "I Wanna Hold Your Hand",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2013,
+        "budget" : 19342
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7d"),
+        "id" : 112,
+        "movieName" : "Ambassador, The (Ambassadøren)",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2012,
+        "budget" : 18336
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7e"),
+        "id" : 113,
+        "movieName" : "Runaway Bride",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2004,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7f"),
+        "id" : 114,
+        "movieName" : "Pacific Rim",
+        "movieGenre" : "Action|Adventure|Sci-Fi|IMAX",
+        "productionYear" : 2006,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+Type "it" for more
+>
+> db.movies.find({"productionYear":{$gt:2000}},{"budget":{$gt:1000}}}).pretty()
+> db.movies.find({"productionYear":{$gt:2000}},{"budget":{$gt:1000}}}).pretty()
+> db.movies.find({"productionYear":{$gt:2000}},{"budget":{$gt:1000}}}).pretty()
+> db.movies.find({}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a14"),
+        "id" : 7,
+        "movieName" : "Stake Land",
+        "movieGenre" : "Horror",
+        "productionYear" : 1945,
+        "budget" : 10979
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a16"),
+        "id" : 9,
+        "movieName" : "Star Kid",
+        "movieGenre" : "Adventure|Children|Fantasy|Sci-Fi",
+        "productionYear" : 1962,
+        "budget" : 9653
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1a"),
+        "id" : 13,
+        "movieName" : "In the Folds of the Flesh",
+        "movieGenre" : "Drama|Horror|Thriller",
+        "productionYear" : 1961,
+        "budget" : 10379
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1f"),
+        "id" : 18,
+        "movieName" : "Chatroom",
+        "movieGenre" : "Crime|Drama|Mystery|Thriller",
+        "productionYear" : 1982,
+        "budget" : 9231
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+Type "it" for more
+> db.movies.find({$and:[{"productionYear":{$gt:2000}},{"budget":{$gt:1000}}]}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a22"),
+        "id" : 21,
+        "movieName" : "Sierra, La",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2017,
+        "budget" : 12781
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a26"),
+        "id" : 25,
+        "movieName" : "Ocean's Eleven (a.k.a. Ocean's 11)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2010,
+        "budget" : 15361
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a28"),
+        "id" : 27,
+        "movieName" : "Silent Witness (Do Not Disturb)",
+        "movieGenre" : "Action|Comedy|Thriller",
+        "productionYear" : 2018,
+        "budget" : 16557
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2c"),
+        "id" : 31,
+        "movieName" : "Non-Stop",
+        "movieGenre" : "Action|Comedy|Crime",
+        "productionYear" : 2014,
+        "budget" : 10715
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2f"),
+        "id" : 34,
+        "movieName" : "Way Back, The",
+        "movieGenre" : "Drama",
+        "productionYear" : 2015,
+        "budget" : 16338
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a3f"),
+        "id" : 50,
+        "movieName" : "À nos amours",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2015,
+        "budget" : 18078
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a41"),
+        "id" : 52,
+        "movieName" : "Whores' Glory",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2011,
+        "budget" : 18416
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a45"),
+        "id" : 56,
+        "movieName" : "Miranda",
+        "movieGenre" : "Romance|Thriller",
+        "productionYear" : 2016,
+        "budget" : 15560
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a67"),
+        "id" : 90,
+        "movieName" : "Yours, Mine and Ours",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2017,
+        "budget" : 14459
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a6b"),
+        "id" : 94,
+        "movieName" : "Downloading Nancy",
+        "movieGenre" : "Drama|Thriller",
+        "productionYear" : 2020,
+        "budget" : 12413
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a6c"),
+        "id" : 95,
+        "movieName" : "Scarlet Letter, The",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2015,
+        "budget" : 15298
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a71"),
+        "id" : 100,
+        "movieName" : "I Wanna Hold Your Hand",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2013,
+        "budget" : 19342
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7d"),
+        "id" : 112,
+        "movieName" : "Ambassador, The (Ambassadøren)",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2012,
+        "budget" : 18336
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7e"),
+        "id" : 113,
+        "movieName" : "Runaway Bride",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2004,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7f"),
+        "id" : 114,
+        "movieName" : "Pacific Rim",
+        "movieGenre" : "Action|Adventure|Sci-Fi|IMAX",
+        "productionYear" : 2006,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+Type "it" for more
+> db.movies.find({$or:[{"productionYear":{$gt:2000}},{"budget":{$gt:1000}}]}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0e"),
+        "id" : 1,
+        "movieName" : "Killer, The (Die xue shuang xiong)",
+        "movieGenre" : "Action|Crime|Drama|Thriller",
+        "productionYear" : 1960,
+        "budget" : 17621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a0f"),
+        "id" : 2,
+        "movieName" : "Zaza",
+        "movieGenre" : "Drama",
+        "productionYear" : 1964,
+        "budget" : 19725
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a10"),
+        "id" : 3,
+        "movieName" : "The Night That Panicked America",
+        "movieGenre" : "(no genres listed)",
+        "productionYear" : 1964,
+        "budget" : 14392
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a11"),
+        "id" : 4,
+        "movieName" : "Scott Walker: 30 Century Man",
+        "movieGenre" : "Documentary|Musical",
+        "productionYear" : 1971,
+        "budget" : 17942
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a12"),
+        "id" : 5,
+        "movieName" : "King of Germany",
+        "movieGenre" : "Comedy",
+        "productionYear" : 1954,
+        "budget" : 15682
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a13"),
+        "id" : 6,
+        "movieName" : "Romantics Anonymous (Les émotifs anonymes)",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2008,
+        "budget" : 17650
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a14"),
+        "id" : 7,
+        "movieName" : "Stake Land",
+        "movieGenre" : "Horror",
+        "productionYear" : 1945,
+        "budget" : 10979
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a15"),
+        "id" : 8,
+        "movieName" : "Whole Town's Talking, The (Passport to Fame)",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1964,
+        "budget" : 18282
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a16"),
+        "id" : 9,
+        "movieName" : "Star Kid",
+        "movieGenre" : "Adventure|Children|Fantasy|Sci-Fi",
+        "productionYear" : 1962,
+        "budget" : 9653
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a17"),
+        "id" : 10,
+        "movieName" : "Superman III",
+        "movieGenre" : "Action|Adventure|Sci-Fi",
+        "productionYear" : 1926,
+        "budget" : 18519
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a18"),
+        "id" : 11,
+        "movieName" : "Pauline at the Beach (Pauline à la Plage)",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2008,
+        "budget" : 17735
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a19"),
+        "id" : 12,
+        "movieName" : "Lucy",
+        "movieGenre" : "Action|Sci-Fi",
+        "productionYear" : 1998,
+        "budget" : 14992
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1a"),
+        "id" : 13,
+        "movieName" : "In the Folds of the Flesh",
+        "movieGenre" : "Drama|Horror|Thriller",
+        "productionYear" : 1961,
+        "budget" : 10379
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1b"),
+        "id" : 14,
+        "movieName" : "Watch the Birdie",
+        "movieGenre" : "Comedy|Crime|Romance",
+        "productionYear" : 1936,
+        "budget" : 19686
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1c"),
+        "id" : 15,
+        "movieName" : "Pancho, the Millionaire Dog",
+        "movieGenre" : "Children|Comedy",
+        "productionYear" : 1952,
+        "budget" : 17421
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1d"),
+        "id" : 16,
+        "movieName" : "History Is Made at Night",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2018,
+        "budget" : 19061
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1e"),
+        "id" : 17,
+        "movieName" : "House of D",
+        "movieGenre" : "Drama",
+        "productionYear" : 1949,
+        "budget" : 12150
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a1f"),
+        "id" : 18,
+        "movieName" : "Chatroom",
+        "movieGenre" : "Crime|Drama|Mystery|Thriller",
+        "productionYear" : 1982,
+        "budget" : 9231
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a20"),
+        "id" : 19,
+        "movieName" : "Dead on Time",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 1992,
+        "budget" : 17724
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a21"),
+        "id" : 20,
+        "movieName" : "Big Lebowski, The",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 1982,
+        "budget" : 19100
+}
+Type "it" for more
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a32"),
+        "id" : 37,
+        "movieName" : "Red Sands",
+        "movieGenre" : "Action|Horror",
+        "productionYear" : 2000,
+        "budget" : 10132
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a75"),
+        "id" : 104,
+        "movieName" : "Clownhouse",
+        "movieGenre" : "Horror",
+        "productionYear" : 2000,
+        "budget" : 16331
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7e"),
+        "id" : 113,
+        "movieName" : "Runaway Bride",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2004,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a9c"),
+        "id" : 143,
+        "movieName" : "White of the Eye",
+        "movieGenre" : "Thriller",
+        "productionYear" : 2004,
+        "budget" : 19769
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aa2"),
+        "id" : 149,
+        "movieName" : "Animal Crackers",
+        "movieGenre" : "Comedy|Musical",
+        "productionYear" : 2004,
+        "budget" : 19332
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aac"),
+        "id" : 159,
+        "movieName" : "Thirst",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 18622
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aae"),
+        "id" : 161,
+        "movieName" : "Treatment, The",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2001,
+        "budget" : 19621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ab6"),
+        "id" : 169,
+        "movieName" : "Beeswax",
+        "movieGenre" : "Comedy|Drama",
+        "productionYear" : 2001,
+        "budget" : 17330
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ac1"),
+        "id" : 180,
+        "movieName" : "Losers, The",
+        "movieGenre" : "Action|Adventure|Drama|Mystery|Thriller",
+        "productionYear" : 2000,
+        "budget" : 17429
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ac2"),
+        "id" : 181,
+        "movieName" : "Michael Shayne: Private Detective",
+        "movieGenre" : "Comedy|Drama|Mystery",
+        "productionYear" : 2000,
+        "budget" : 19617
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19adc"),
+        "id" : 207,
+        "movieName" : "How to Live Forever",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2005,
+        "budget" : 9245
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aea"),
+        "id" : 221,
+        "movieName" : "Hail Caesar",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2005,
+        "budget" : 17688
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b02"),
+        "id" : 245,
+        "movieName" : "Django Unchained",
+        "movieGenre" : "Action|Drama|Western",
+        "productionYear" : 2005,
+        "budget" : 11095
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b11"),
+        "id" : 260,
+        "movieName" : "Combat dans L'Ile, Le (Fire and Ice)",
+        "movieGenre" : "Drama",
+        "productionYear" : 2005,
+        "budget" : 19653
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b15"),
+        "id" : 264,
+        "movieName" : "Alabama's Ghost",
+        "movieGenre" : "Horror",
+        "productionYear" : 2005,
+        "budget" : 16964
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b32"),
+        "id" : 293,
+        "movieName" : "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark)",
+        "movieGenre" : "Action|Adventure",
+        "productionYear" : 2005,
+        "budget" : 13677
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b3f"),
+        "id" : 306,
+        "movieName" : "Heavenly Forest",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2003,
+        "budget" : 19911
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b5a"),
+        "id" : 333,
+        "movieName" : "Street People",
+        "movieGenre" : "Action|Thriller",
+        "productionYear" : 2003,
+        "budget" : 15591
+}
+Type "it" for more
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1})pretty()
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:99
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort()pretty()
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:79
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort().pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field sortto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1}).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19a32"),
+        "id" : 37,
+        "movieName" : "Red Sands",
+        "movieGenre" : "Action|Horror",
+        "productionYear" : 2000,
+        "budget" : 10132
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a75"),
+        "id" : 104,
+        "movieName" : "Clownhouse",
+        "movieGenre" : "Horror",
+        "productionYear" : 2000,
+        "budget" : 16331
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ac1"),
+        "id" : 180,
+        "movieName" : "Losers, The",
+        "movieGenre" : "Action|Adventure|Drama|Mystery|Thriller",
+        "productionYear" : 2000,
+        "budget" : 17429
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ac2"),
+        "id" : 181,
+        "movieName" : "Michael Shayne: Private Detective",
+        "movieGenre" : "Comedy|Drama|Mystery",
+        "productionYear" : 2000,
+        "budget" : 19617
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b7f"),
+        "id" : 370,
+        "movieName" : "Small Town, The (a.k.a. The Town) (Kasaba)",
+        "movieGenre" : "Drama",
+        "productionYear" : 2000,
+        "budget" : 17273
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bae"),
+        "id" : 417,
+        "movieName" : "Man Who Copied, The (Homem Que Copiava, O)",
+        "movieGenre" : "Comedy|Crime|Drama|Romance",
+        "productionYear" : 2000,
+        "budget" : 14951
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aac"),
+        "id" : 159,
+        "movieName" : "Thirst",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 18622
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aae"),
+        "id" : 161,
+        "movieName" : "Treatment, The",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2001,
+        "budget" : 19621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ab6"),
+        "id" : 169,
+        "movieName" : "Beeswax",
+        "movieGenre" : "Comedy|Drama",
+        "productionYear" : 2001,
+        "budget" : 17330
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b6e"),
+        "id" : 353,
+        "movieName" : "Go",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2001,
+        "budget" : 15352
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b91"),
+        "id" : 388,
+        "movieName" : "Deal, The",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 19183
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bba"),
+        "id" : 429,
+        "movieName" : "Stranger, The (Agantuk) (Visitor, The)",
+        "movieGenre" : "Drama",
+        "productionYear" : 2002,
+        "budget" : 19161
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b3f"),
+        "id" : 306,
+        "movieName" : "Heavenly Forest",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2003,
+        "budget" : 19911
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b5a"),
+        "id" : 333,
+        "movieName" : "Street People",
+        "movieGenre" : "Action|Thriller",
+        "productionYear" : 2003,
+        "budget" : 15591
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bca"),
+        "id" : 445,
+        "movieName" : "Green Lantern: First Flight",
+        "movieGenre" : "Action|Adventure|Animation|Fantasy|Sci-Fi",
+        "productionYear" : 2003,
+        "budget" : 15549
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bde"),
+        "id" : 465,
+        "movieName" : "Odd Couple II, The",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2003,
+        "budget" : 19967
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7e"),
+        "id" : 113,
+        "movieName" : "Runaway Bride",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2004,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a9c"),
+        "id" : 143,
+        "movieName" : "White of the Eye",
+        "movieGenre" : "Thriller",
+        "productionYear" : 2004,
+        "budget" : 19769
+}
+Type "it" for more
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1}).skip(5).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19bae"),
+        "id" : 417,
+        "movieName" : "Man Who Copied, The (Homem Que Copiava, O)",
+        "movieGenre" : "Comedy|Crime|Drama|Romance",
+        "productionYear" : 2000,
+        "budget" : 14951
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aac"),
+        "id" : 159,
+        "movieName" : "Thirst",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 18622
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aae"),
+        "id" : 161,
+        "movieName" : "Treatment, The",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2001,
+        "budget" : 19621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ab6"),
+        "id" : 169,
+        "movieName" : "Beeswax",
+        "movieGenre" : "Comedy|Drama",
+        "productionYear" : 2001,
+        "budget" : 17330
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b6e"),
+        "id" : 353,
+        "movieName" : "Go",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2001,
+        "budget" : 15352
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b91"),
+        "id" : 388,
+        "movieName" : "Deal, The",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 19183
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bba"),
+        "id" : 429,
+        "movieName" : "Stranger, The (Agantuk) (Visitor, The)",
+        "movieGenre" : "Drama",
+        "productionYear" : 2002,
+        "budget" : 19161
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b3f"),
+        "id" : 306,
+        "movieName" : "Heavenly Forest",
+        "movieGenre" : "Drama|Romance",
+        "productionYear" : 2003,
+        "budget" : 19911
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b5a"),
+        "id" : 333,
+        "movieName" : "Street People",
+        "movieGenre" : "Action|Thriller",
+        "productionYear" : 2003,
+        "budget" : 15591
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bca"),
+        "id" : 445,
+        "movieName" : "Green Lantern: First Flight",
+        "movieGenre" : "Action|Adventure|Animation|Fantasy|Sci-Fi",
+        "productionYear" : 2003,
+        "budget" : 15549
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bde"),
+        "id" : 465,
+        "movieName" : "Odd Couple II, The",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2003,
+        "budget" : 19967
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a7e"),
+        "id" : 113,
+        "movieName" : "Runaway Bride",
+        "movieGenre" : "Comedy|Romance",
+        "productionYear" : 2004,
+        "budget" : 15929
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a9c"),
+        "id" : 143,
+        "movieName" : "White of the Eye",
+        "movieGenre" : "Thriller",
+        "productionYear" : 2004,
+        "budget" : 19769
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aa2"),
+        "id" : 149,
+        "movieName" : "Animal Crackers",
+        "movieGenre" : "Comedy|Musical",
+        "productionYear" : 2004,
+        "budget" : 19332
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b92"),
+        "id" : 389,
+        "movieName" : "Crooks in Clover (a.k.a. Monsieur Gangster) (Les tontons flingueurs)",
+        "movieGenre" : "Action|Comedy|Crime",
+        "productionYear" : 2004,
+        "budget" : 18562
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19adc"),
+        "id" : 207,
+        "movieName" : "How to Live Forever",
+        "movieGenre" : "Documentary",
+        "productionYear" : 2005,
+        "budget" : 9245
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aea"),
+        "id" : 221,
+        "movieName" : "Hail Caesar",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2005,
+        "budget" : 17688
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b02"),
+        "id" : 245,
+        "movieName" : "Django Unchained",
+        "movieGenre" : "Action|Drama|Western",
+        "productionYear" : 2005,
+        "budget" : 11095
+}
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1}).skip(5).pretty()
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1}).skip(5).pretty()
+> db.movies.find({"productionYear":{$in:[2000,2001,2002,2003,2004,2005]}}).sort({"productionYear":1}).skip(5).limit(10).pretty()
+{
+        "_id" : ObjectId("6139bba149dff20629a19bae"),
+        "id" : 417,
+        "movieName" : "Man Who Copied, The (Homem Que Copiava, O)",
+        "movieGenre" : "Comedy|Crime|Drama|Romance",
+        "productionYear" : 2000,
+        "budget" : 14951
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aac"),
+        "id" : 159,
+        "movieName" : "Thirst",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 18622
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19aae"),
+        "id" : 161,
+        "movieName" : "Treatment, The",
+        "movieGenre" : "Comedy|Drama|Romance",
+        "productionYear" : 2001,
+        "budget" : 19621
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19ab6"),
+        "id" : 169,
+        "movieName" : "Beeswax",
+        "movieGenre" : "Comedy|Drama",
+        "productionYear" : 2001,
+        "budget" : 17330
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b91"),
+        "id" : 388,
+        "movieName" : "Deal, The",
+        "movieGenre" : "Drama",
+        "productionYear" : 2001,
+        "budget" : 19183
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a2d"),
+        "id" : 32,
+        "movieName" : "Home Sweet Home",
+        "movieGenre" : "Comedy",
+        "productionYear" : 2001,
+        "budget" : 11886
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b6e"),
+        "id" : 353,
+        "movieName" : "Go",
+        "movieGenre" : "Comedy|Crime",
+        "productionYear" : 2001,
+        "budget" : 15352
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19bba"),
+        "id" : 429,
+        "movieName" : "Stranger, The (Agantuk) (Visitor, The)",
+        "movieGenre" : "Drama",
+        "productionYear" : 2002,
+        "budget" : 19161
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19a84"),
+        "id" : 119,
+        "movieName" : "Gone in 60 Seconds",
+        "movieGenre" : "Action|Crime",
+        "productionYear" : 2003,
+        "budget" : 16438
+}
+{
+        "_id" : ObjectId("6139bba149dff20629a19b5a"),
+        "id" : 333,
+        "movieName" : "Street People",
+        "movieGenre" : "Action|Thriller",
+        "productionYear" : 2003,
+        "budget" : 15591
+}
+> db.movies.find().sort({"productionYear":1}).limit(10).remove({"movieGenre"}).pretty()
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:74
+> db.movies.find().sort({"productionYear":1}).limit(10).update({"movieGenre":"1"}).pretty()
+uncaught exception: TypeError: db.movies.find(...).sort(...).limit(...).update is not a function :
+@(shell):1:1
+> db.movies.find().sort({"productionYear":1}).limit(10).updateMany({"movieGenre":"1"}).pretty()
+uncaught exception: TypeError: db.movies.find(...).sort(...).limit(...).updateMany is not a function :
+@(shell):1:1
+> db.movies.find().sort({"productionYear":1}).limit(10).update({"movieGenre":"1"}).pretty()
+uncaught exception: TypeError: db.movies.find(...).sort(...).limit(...).update is not a function :
+@(shell):1:1
+>
