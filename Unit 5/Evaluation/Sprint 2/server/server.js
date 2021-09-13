@@ -25,14 +25,16 @@ const studentSchema = new mongoose.Schema({
         ref: "instructor",
         required: true
     },
-    studentId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "batch",
-        required: true
-    },
-    course: {
+
+    courseId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "course",
+        required: true
+    },
+
+    batchId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "batch",
         required: true
     }
 
@@ -88,7 +90,7 @@ app.post("/students", async (req, res) => {
 })
 
 app.get("/students", async (req, res) => {
-    const students = await Student.find().lean().exec()
+    const students = await Student.find().lean().populate("courseId").populate("instructorId").populate("batchId").exec()
 
     return res.status(200).json({ students })
 })
