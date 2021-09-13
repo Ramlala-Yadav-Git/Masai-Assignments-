@@ -94,6 +94,21 @@ app.get("/students", async (req, res) => {
 
     return res.status(200).json({ students })
 })
+app.get("/students/age", async (req, res) => {
+    const students = await Student.find({ age: { $gt: 18 } }).lean().exec()
+
+    return res.status(200).json({ students })
+})
+app.get("/students/course", async (req, res) => {
+    const students = await Student.find({ "courseId": "613f1bc81d5c2d7714de4591" }).lean().exec()
+
+    return res.status(200).json({ students })
+})
+app.get("/students/men", async (req, res) => {
+    const students = await Student.find({ "gender": "male" }).count().lean().exec()
+
+    return res.status(200).json({ students })
+})
 app.post("/batchs", async (req, res) => {
     const batch = await Batch.create(req.body)
 
