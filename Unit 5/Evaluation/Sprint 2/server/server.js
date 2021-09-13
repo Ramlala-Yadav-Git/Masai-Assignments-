@@ -105,9 +105,27 @@ app.get("/students/course", async (req, res) => {
     return res.status(200).json({ students })
 })
 app.get("/students/men", async (req, res) => {
-    const students = await Student.find({ "gender": "male" }).count().lean().exec()
+    const students = await Student.find({ "gender": "male" }).countDocuments().lean().exec()
 
     return res.status(200).json({ students })
+})
+app.get("/students/women", async (req, res) => {
+    const students = await Student.find({ "gender": "female" }).countDocuments().lean().exec()
+
+    return res.status(200).json({ students })
+})
+app.get("/students/total", async (req, res) => {
+    const students = await Student.find().countDocument().lean().exec()
+
+    return res.status(200).json({ students })
+})
+app.get("/students/batch", async (req, res) => {
+    const s1 = await Student.find({ "batchId": "613f1c091d5c2d7714de4594" }).countDocuments().lean().exec()
+    const s2 = await Student.find({ "batchId": "613f1c131d5c2d7714de4596" }).countDocuments().lean().exec()
+    const s3 = await Student.find({ "batchId": "613f290688760a55d8df8e5b" }).countDocuments().lean().exec()
+    let max = Math.max(s1, s2, s3)
+
+    return res.status(200).json({ max })
 })
 app.post("/batchs", async (req, res) => {
     const batch = await Batch.create(req.body)
