@@ -105,27 +105,47 @@ app.get("/students/course", async (req, res) => {
     return res.status(200).json({ students })
 })
 app.get("/students/men", async (req, res) => {
-    const students = await Student.find({ "gender": "male" }).countDocuments().lean().exec()
+    const totalMen = await Student.find({ "gender": "male" }).countDocuments().lean().exec()
 
-    return res.status(200).json({ students })
+    return res.status(200).json({ totalMen })
 })
 app.get("/students/women", async (req, res) => {
-    const students = await Student.find({ "gender": "female" }).countDocuments().lean().exec()
+    const totalWomen = await Student.find({ "gender": "female" }).countDocuments().lean().exec()
 
-    return res.status(200).json({ students })
+    return res.status(200).json({ totalWomen })
 })
 app.get("/students/total", async (req, res) => {
-    const students = await Student.find().countDocument().lean().exec()
+    const totalStudents = await Student.find().countDocument().lean().exec()
 
-    return res.status(200).json({ students })
+    return res.status(200).json({ totalStudents })
 })
 app.get("/students/batch", async (req, res) => {
     const s1 = await Student.find({ "batchId": "613f1c091d5c2d7714de4594" }).countDocuments().lean().exec()
     const s2 = await Student.find({ "batchId": "613f1c131d5c2d7714de4596" }).countDocuments().lean().exec()
     const s3 = await Student.find({ "batchId": "613f290688760a55d8df8e5b" }).countDocuments().lean().exec()
-    let max = Math.max(s1, s2, s3)
+    let maxBatchStudent = Math.max(s1, s2, s3)
 
-    return res.status(200).json({ max })
+    return res.status(200).json({ maxBatchStudent })
+})
+app.get("/students/instructor", async (req, res) => {
+    const s1 = await Student.find({ "instructorId": "613f2da31b3ac4722c239ae8" }).lean().exec()
+    const s2 = await Student.find({ "instructorId": "613f2caf7afa0984e8136f3f" }).lean().exec()
+    const s3 = await Student.find({ "instructorId": "613f1d00028dd870e0396861" }).lean().exec()
+    let max = Math.max(s1.length, s2.length, s3.length)
+    let a;
+    if (s1.length == max) {
+        a = s1;
+    }
+    else if (s2.length == max) {
+        a = s2;
+    }
+    else {
+        a = s3
+    }
+    let instructorName = await Instructor.find({ "instructorId": a[0].instructorId }).lean().exec()
+
+
+    return res.status(200).json({ instructorName, a, s2, s3 })
 })
 app.post("/batchs", async (req, res) => {
     const batch = await Batch.create(req.body)
