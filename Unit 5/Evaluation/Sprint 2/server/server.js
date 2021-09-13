@@ -120,12 +120,24 @@ app.get("/students/total", async (req, res) => {
     return res.status(200).json({ totalStudents })
 })
 app.get("/students/batch", async (req, res) => {
-    const s1 = await Student.find({ "batchId": "613f1c091d5c2d7714de4594" }).countDocuments().lean().exec()
-    const s2 = await Student.find({ "batchId": "613f1c131d5c2d7714de4596" }).countDocuments().lean().exec()
-    const s3 = await Student.find({ "batchId": "613f290688760a55d8df8e5b" }).countDocuments().lean().exec()
-    let maxBatchStudent = Math.max(s1, s2, s3)
+    const s1 = await Student.find({ "batchId": "613f1c091d5c2d7714de4594" }).lean().exec()
+    const s2 = await Student.find({ "batchId": "613f1c131d5c2d7714de4596" }).lean().exec()
+    const s3 = await Student.find({ "batchId": "613f290688760a55d8df8e5b" }).lean().exec()
+    let max = Math.max(s1.length, s2.length, s3.length)
+    let a;
+    if (s1.length == max) {
+        a = s1;
+    }
+    else if (s2.length == max) {
+        a = s2;
+    }
+    else {
+        a = s3
+    }
+    let batch = await Batch.find({ "_id": a[0].batchId }).lean().exec()
 
-    return res.status(200).json({ maxBatchStudent })
+
+    return res.status(200).json({ batch })
 })
 app.get("/students/instructor", async (req, res) => {
     const s1 = await Student.find({ "instructorId": "613f2da31b3ac4722c239ae8" }).lean().exec()
@@ -142,10 +154,10 @@ app.get("/students/instructor", async (req, res) => {
     else {
         a = s3
     }
-    let instructorName = await Instructor.find({ "instructorId": a[0].instructorId }).lean().exec()
+    let instructor = await Instructor.find({ "_id": a[0].instructorId }).lean().exec()
 
 
-    return res.status(200).json({ instructorName, a, s2, s3 })
+    return res.status(200).json({ instructor })
 })
 app.post("/batchs", async (req, res) => {
     const batch = await Batch.create(req.body)
