@@ -19,7 +19,7 @@ const studentSchema = new mongoose.Schema({
     email: { type: String, required: true },
     gender: { type: String, required: true },
     age: { type: Number, required: true },
-    course: { type: String, required: true }
+
 
 
 
@@ -30,6 +30,38 @@ const studentSchema = new mongoose.Schema({
 
 const Student = mongoose.model("student", studentSchema)
 
+
+const batchSchema = new mongoose.Schema({
+    name: { type: String },
+    studentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "student",
+        required: true
+    },
+
+
+})
+
+const Batch = mongoose.model("batch", batchSchema)
+
+
+const instructorSchema = new mongoose.Schema({
+    name: { Type: String }
+})
+
+const Instructor = mongoose.model("instructor", instructorSchema)
+
+const courseSchema = new mongoose.Schema({
+    name: { type: String },
+    studentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "student",
+        required: true
+    }
+
+})
+
+const Course = mongoose.model("course", courseSchema)
 
 app.listen(1234, async () => {
     await connect()
