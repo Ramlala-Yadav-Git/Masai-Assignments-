@@ -94,32 +94,30 @@ app.get("/students", async (req, res) => {
 
     return res.status(200).json({ students })
 })
-app.get("/students/age", async (req, res) => {
+app.get("/students/ageGT18", async (req, res) => {
     const students = await Student.find({ age: { $gt: 18 } }).lean().exec()
 
     return res.status(200).json({ students })
 })
-app.get("/students/course", async (req, res) => {
-    const students = await Student.find({ "courseId": "613f1bc81d5c2d7714de4591" }).lean().exec()
+app.get("/students/webDevelopement", async (req, res) => {
+    const students = await Student.find({ "courseId": "613f1bb71d5c2d7714de458f" }).lean().exec()
 
     return res.status(200).json({ students })
 })
-app.get("/students/men", async (req, res) => {
+app.get("/students/total", async (req, res) => {
     const totalMen = await Student.find({ "gender": "male" }).countDocuments().lean().exec()
-
-    return res.status(200).json({ totalMen })
-})
-app.get("/students/women", async (req, res) => {
     const totalWomen = await Student.find({ "gender": "female" }).countDocuments().lean().exec()
 
-    return res.status(200).json({ totalWomen })
+
+    return res.status(200).json({ totalMen, totalWomen })
 })
-app.get("/students/total", async (req, res) => {
-    const totalStudents = await Student.find().countDocument().lean().exec()
+
+app.get("/students/totalStudents", async (req, res) => {
+    const totalStudents = await Student.find().countDocuments().lean().exec()
 
     return res.status(200).json({ totalStudents })
 })
-app.get("/students/batch", async (req, res) => {
+app.get("/students/batchMaxStudents", async (req, res) => {
     const s1 = await Student.find({ "batchId": "613f1c091d5c2d7714de4594" }).lean().exec()
     const s2 = await Student.find({ "batchId": "613f1c131d5c2d7714de4596" }).lean().exec()
     const s3 = await Student.find({ "batchId": "613f290688760a55d8df8e5b" }).lean().exec()
@@ -139,7 +137,7 @@ app.get("/students/batch", async (req, res) => {
 
     return res.status(200).json({ batch })
 })
-app.get("/students/instructor", async (req, res) => {
+app.get("/students/instructorMaxStudents", async (req, res) => {
     const s1 = await Student.find({ "instructorId": "613f2da31b3ac4722c239ae8" }).lean().exec()
     const s2 = await Student.find({ "instructorId": "613f2caf7afa0984e8136f3f" }).lean().exec()
     const s3 = await Student.find({ "instructorId": "613f1d00028dd870e0396861" }).lean().exec()
