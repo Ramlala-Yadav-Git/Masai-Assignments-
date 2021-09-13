@@ -45,7 +45,7 @@ const Student = mongoose.model("student", studentSchema)
 
 
 const batchSchema = new mongoose.Schema({
-    name: { type: String },
+    name: { type: String, required: true },
 
 
 
@@ -58,7 +58,7 @@ const Batch = mongoose.model("batch", batchSchema)
 
 
 const instructorSchema = new mongoose.Schema({
-    name: { Type: String }
+    name: { type: String, required: true }
 }, {
     versionKey: false,
     timestamps: true
@@ -92,7 +92,40 @@ app.get("/students", async (req, res) => {
 
     return res.status(200).json({ students })
 })
+app.post("/batchs", async (req, res) => {
+    const batch = await Batch.create(req.body)
 
+    return res.status(201).json({ batch })
+})
+app.get("/batchs", async (req, res) => {
+    const batch = await Batch.find().lean().exec()
+
+    return res.status(200).json({ batch })
+})
+
+app.post("/courses", async (req, res) => {
+    const course = await Course.create(req.body)
+
+    return res.status(201).json({ course })
+})
+
+app.get("/courses", async (req, res) => {
+    const course = await Course.find().lean().exec()
+
+    return res.status(200).json({ course })
+})
+
+app.post("/instructors", async (req, res) => {
+    const instructor = await Instructor.create(req.body)
+
+    return res.status(201).json({ instructor })
+})
+
+app.get("/instructors", async (req, res) => {
+    const instructor = await Instructor.find().lean().exec()
+
+    return res.status(200).json({ instructor })
+})
 
 
 
