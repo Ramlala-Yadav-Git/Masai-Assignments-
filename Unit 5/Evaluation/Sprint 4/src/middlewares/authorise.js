@@ -1,20 +1,20 @@
-const authorise = (permittedRoles) => {
+const authorise = (permittedRoles) =>
 
-    return function (req, res, next) {
+    function (req, res, next) {
         const { user } = req.user;
+
         const roles = user.roles;
-        const permitted = roles.filter((role) => {
-            permittedRoles.includes(role)
-        })
+
+        const permitted = roles.filter((role) => permittedRoles.includes(role));
 
         if (permitted.length) {
-            return next()
+            next()
         }
         else {
-            return res.status(403).send({ status: "failed", message: "Forbidden access" })
+            return res
+                .status(403)
+                .send({ status: "Failed", message: "Forbidden access" })
         }
-
     }
-}
 
-module.exports = authorise
+module.exports = authorise;
