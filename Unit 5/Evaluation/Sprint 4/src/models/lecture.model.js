@@ -14,3 +14,5 @@ const lectureSchema = new mongoose.Schema({
         versionKey: false,
         timestamps: true
     })
+
+const Lecture = mongoose.model("lecture", lectureSchema)
