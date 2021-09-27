@@ -32,7 +32,7 @@ const register = async (req, res) => {
         user = await User.create(req.body)
         if (!user) {
             return res.status(400)
-                .send({ status: "Failed", message: "Please try again later with valid inputs" })
+                .send({ status: "Failed", message: "Please! try again later with valid inputs" })
         }
         const token = newToken(user);
         return res.status(201).json({ token })
