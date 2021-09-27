@@ -44,6 +44,16 @@ router.get("/", async (req, res) => {
     return res.status(200).json({ posts });
 });
 
+
+router.get("/:id", async (req, res) => {
+    if (!req.body.token) {
+        return res
+            .status(400)
+            .json({ status: "failed", message: "User is not logged in" });
+    }
+    const posts = await Lecture.findById(req.params.id).populate({ path: "user" }).lean().exec();
+    return res.status(200).json({ posts });
+});
 router.delete("/:id", async (Req, res) => {
 
     const lecture = await Lecture.findById(req.params.id).lean().exec()

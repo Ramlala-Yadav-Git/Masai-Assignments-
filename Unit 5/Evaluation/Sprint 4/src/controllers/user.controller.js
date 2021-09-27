@@ -5,11 +5,13 @@ const router = express.Router();
 
 const upload = require("../utils/fileuploads");
 
-router.post("/", upload.single("profile_pic"), async (req, res) => {
+router.post("/", upload.single("profile_photo_url"), async (req, res) => {
     const user = await User.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        profile_pic: req.file.path,
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        roles: req.body.roles,
+        profile_photo_url: req.file.path,
     });
 
     return res.status(201).json({ data: user });

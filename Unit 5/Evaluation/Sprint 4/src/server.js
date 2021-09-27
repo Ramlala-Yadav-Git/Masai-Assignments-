@@ -6,11 +6,12 @@ require("dotenv").config()
 const { body } = require("express-validator")
 const { register, login } = require("./controllers/auth.controller")
 const userController = require("./controllers/user.controller")
-
+const lectureController = require("./controllers/lecture.controller")
 
 const app = express()
 app.use(express.json());
 app.use("/users", userController)
+app.use("/lecture", lectureController)
 
 
 app.post("/signup",
@@ -33,7 +34,7 @@ app.post("/signin",
 
 const start = async () => {
     await connect()
-
+    console.log(process.env.SERVER_PORT);
     app.listen(process.env.SERVER_PORT, () => {
         console.log("!Hurray connection to the port no 2345");
     })
