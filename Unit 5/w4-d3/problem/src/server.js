@@ -12,7 +12,7 @@ const postController = require("./controllers/posts.controller")
 
 const app = express();
 app.use(express.json())
-app.use("/posts", postController)
+app.use("/posts", postController);
 app.use("/users", userController);
 
 app.post("/signup",
