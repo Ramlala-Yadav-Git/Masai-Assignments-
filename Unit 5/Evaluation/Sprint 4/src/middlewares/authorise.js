@@ -1,7 +1,7 @@
-const authorise = (permittedRoles) =>
-
-    function (req, res, next) {
-        const { user } = req.user;
+const authorise = (permittedRoles) => {
+    return function (req, next, res) {
+        console.log(req.user)
+        const user = req.user;
 
         const roles = user.roles;
 
@@ -16,5 +16,5 @@ const authorise = (permittedRoles) =>
                 .send({ status: "Failed", message: "Forbidden access" })
         }
     }
-
+}
 module.exports = authorise;
