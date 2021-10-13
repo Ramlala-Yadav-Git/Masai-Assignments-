@@ -1,0 +1,47 @@
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  background: rgba(221, 14, 14, 0.74);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+#body{
+    background-color: ghostwhite;
+    border: 1px solid red;
+    max-height: 700px;
+    width: 50%;
+    overflow: auto;
+    margin: auto;
+
+
+}
+body{
+    height: 700px;
+}
+.container{
+    flex-wrap: wrap;
+    border: 1px solid red;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    /* height: 500px; */
+    /* overflow: auto; */
+    /* height: 100vh; */
+    padding: 10px;
+    margin-bottom: 50px;
+}
