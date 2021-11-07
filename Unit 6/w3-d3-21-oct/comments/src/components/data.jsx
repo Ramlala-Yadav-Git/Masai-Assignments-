@@ -25,12 +25,26 @@ const data = {
                     body: "Thanks for the update!",
                     timestamp: "Sun Aug 02 2020 18:15:45 GMT+0530",
                     points: "8"
+                },
+                {
+                    id: "007",
+                    author: "Swanand",
+                    body: "Thanks for the update!",
+                    timestamp: "Sun Aug 02 2020 18:15:45 GMT+0530",
+                    points: "8"
                 }
             ]
         },
         {
             id: "002",
             author: "Nrupul",
+            body: "looking forward for the demo!",
+            timestamp: "Sun Aug 02 2020 18:10:45 GMT+0530",
+            points: "2"
+        },
+        {
+            id: "004",
+            author: "Aman",
             body: "looking forward for the demo!",
             timestamp: "Sun Aug 02 2020 18:10:45 GMT+0530",
             points: "2"

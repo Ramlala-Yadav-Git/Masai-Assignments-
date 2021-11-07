@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codejudge || Add two number</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid black;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .container div {
+            margin-bottom: 20px;
+            align-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="inputForm">
+            <div>
+                <label for="firstNumber">Enter First Number :</label>
+                <input type="number" name="Text1" id="Text1" onchange="handleDisplay()" required>
+            </div>
+            <div>
+                <label for="secondNumber">Enter Second Number :</label>
+                <input type="number" name="Text2" id="Text2" onchange="handleDisplay()" required>
+            </div>
+            <div>
+                <label for="result">Result :</label>
+                <input type="number" name="txtresult" id="txtresult" disabled>
+            </div>
+            <input type="button" id="clickbtn" value="Display Result">
+        </form>
+    </div>
+</body>
+<script>
+    let form = document.getElementById("inputForm");
+    let fNumber = form.Text1.value;
+    let SNumber = form.Text2.value;
+    let result = form.txtresult;
+    let button = form.clickbtn;
+    button.disabled = true
+    function handleDisplay() {
+        fNumber = Number(form.Text1.value);
+        sNumber = Number(form.Text2.value)
+        showButton()
+    }
+    function showButton() {
+        if (typeof (fNumber) == 'number' && typeof (sNumber) == 'number') {
+            button.disabled = false;
+            button.addEventListener('click', function () {
+                let res = fNumber + sNumber;
+                result.value = res;
+            })
+        }
+    }
+
+
+
+</script>
+
+</html>
